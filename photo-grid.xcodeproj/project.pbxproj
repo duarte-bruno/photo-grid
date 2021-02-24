@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		75CDB80725E5C814000C114E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CDB80625E5C814000C114E /* AppDelegate.swift */; };
-		75CDB80925E5C814000C114E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CDB80825E5C814000C114E /* SceneDelegate.swift */; };
-		75CDB80B25E5C814000C114E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CDB80A25E5C814000C114E /* ViewController.swift */; };
-		75CDB80E25E5C814000C114E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75CDB80C25E5C814000C114E /* Main.storyboard */; };
 		75CDB81025E5C816000C114E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75CDB80F25E5C816000C114E /* Assets.xcassets */; };
 		75CDB81325E5C816000C114E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75CDB81125E5C816000C114E /* LaunchScreen.storyboard */; };
 		75CDB81E25E5C816000C114E /* photo_gridTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CDB81D25E5C816000C114E /* photo_gridTests.swift */; };
 		75CDB82925E5C817000C114E /* photo_gridUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CDB82825E5C817000C114E /* photo_gridUITests.swift */; };
+		75CDB84525E5CADB000C114E /* ListPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CDB84325E5CADB000C114E /* ListPhotosViewController.swift */; };
+		75CDB84625E5CADB000C114E /* ListPhotosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75CDB84425E5CADB000C114E /* ListPhotosViewController.xib */; };
+		75CDB84C25E5CB5E000C114E /* ListPhotosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CDB84B25E5CB5E000C114E /* ListPhotosViewModel.swift */; };
+		75CDB85425E5CF97000C114E /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CDB85325E5CF97000C114E /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,9 +38,6 @@
 /* Begin PBXFileReference section */
 		75CDB80325E5C814000C114E /* photo-grid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "photo-grid.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		75CDB80625E5C814000C114E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		75CDB80825E5C814000C114E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		75CDB80A25E5C814000C114E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		75CDB80D25E5C814000C114E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		75CDB80F25E5C816000C114E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		75CDB81225E5C816000C114E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		75CDB81425E5C816000C114E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +47,10 @@
 		75CDB82425E5C817000C114E /* photo-gridUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "photo-gridUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		75CDB82825E5C817000C114E /* photo_gridUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photo_gridUITests.swift; sourceTree = "<group>"; };
 		75CDB82A25E5C817000C114E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		75CDB84325E5CADB000C114E /* ListPhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPhotosViewController.swift; sourceTree = "<group>"; };
+		75CDB84425E5CADB000C114E /* ListPhotosViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListPhotosViewController.xib; sourceTree = "<group>"; };
+		75CDB84B25E5CB5E000C114E /* ListPhotosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPhotosViewModel.swift; sourceTree = "<group>"; };
+		75CDB85325E5CF97000C114E /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +101,12 @@
 		75CDB80525E5C814000C114E /* photo-grid */ = {
 			isa = PBXGroup;
 			children = (
-				75CDB80625E5C814000C114E /* AppDelegate.swift */,
-				75CDB80825E5C814000C114E /* SceneDelegate.swift */,
-				75CDB80A25E5C814000C114E /* ViewController.swift */,
-				75CDB80C25E5C814000C114E /* Main.storyboard */,
-				75CDB80F25E5C816000C114E /* Assets.xcassets */,
-				75CDB81125E5C816000C114E /* LaunchScreen.storyboard */,
-				75CDB81425E5C816000C114E /* Info.plist */,
+				75CDB83F25E5C9DC000C114E /* App */,
+				75CDB83E25E5C9C0000C114E /* Services */,
+				75CDB83D25E5C9B0000C114E /* Models */,
+				75CDB83C25E5C9A1000C114E /* Controllers */,
+				75CDB83B25E5C98D000C114E /* ViewModels */,
+				75CDB83A25E5C967000C114E /* Views */,
 			);
 			path = "photo-grid";
 			sourceTree = "<group>";
@@ -126,6 +127,56 @@
 				75CDB82A25E5C817000C114E /* Info.plist */,
 			);
 			path = "photo-gridUITests";
+			sourceTree = "<group>";
+		};
+		75CDB83A25E5C967000C114E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		75CDB83B25E5C98D000C114E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				75CDB84B25E5CB5E000C114E /* ListPhotosViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		75CDB83C25E5C9A1000C114E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				75CDB84325E5CADB000C114E /* ListPhotosViewController.swift */,
+				75CDB84425E5CADB000C114E /* ListPhotosViewController.xib */,
+				75CDB85325E5CF97000C114E /* TabBarController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		75CDB83D25E5C9B0000C114E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		75CDB83E25E5C9C0000C114E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		75CDB83F25E5C9DC000C114E /* App */ = {
+			isa = PBXGroup;
+			children = (
+				75CDB81425E5C816000C114E /* Info.plist */,
+				75CDB80F25E5C816000C114E /* Assets.xcassets */,
+				75CDB81125E5C816000C114E /* LaunchScreen.storyboard */,
+				75CDB80625E5C814000C114E /* AppDelegate.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,8 +283,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				75CDB81325E5C816000C114E /* LaunchScreen.storyboard in Resources */,
+				75CDB84625E5CADB000C114E /* ListPhotosViewController.xib in Resources */,
 				75CDB81025E5C816000C114E /* Assets.xcassets in Resources */,
-				75CDB80E25E5C814000C114E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +309,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75CDB80B25E5C814000C114E /* ViewController.swift in Sources */,
+				75CDB84525E5CADB000C114E /* ListPhotosViewController.swift in Sources */,
+				75CDB85425E5CF97000C114E /* TabBarController.swift in Sources */,
+				75CDB84C25E5CB5E000C114E /* ListPhotosViewModel.swift in Sources */,
 				75CDB80725E5C814000C114E /* AppDelegate.swift in Sources */,
-				75CDB80925E5C814000C114E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,14 +348,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		75CDB80C25E5C814000C114E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				75CDB80D25E5C814000C114E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		75CDB81125E5C816000C114E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -366,7 +410,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -421,7 +465,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -437,16 +481,18 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8KR33X63ZD;
-				INFOPLIST_FILE = "photo-grid/Info.plist";
+				INFOPLIST_FILE = "photo-grid/App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bruno-duarte.photo-grid";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -456,16 +502,18 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8KR33X63ZD;
-				INFOPLIST_FILE = "photo-grid/Info.plist";
+				INFOPLIST_FILE = "photo-grid/App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bruno-duarte.photo-grid";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
