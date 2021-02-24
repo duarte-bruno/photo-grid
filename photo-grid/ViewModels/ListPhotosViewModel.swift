@@ -7,4 +7,5 @@
 
 class ListPhotosViewModel {
     
+    let viewTitle = "Photos"
 }
