@@ -9,21 +9,33 @@ import UIKit
 
 class ListPhotosViewController: UIViewController {
 
+    // MARK: - Attributes
+    
     private var viewModel = ListPhotosViewModel()
     
-    // MARK: - Object lifecycle
-    
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        title = viewModel.viewTitle
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        title = viewModel.viewTitle
-    }
+    // MARK: - Class lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setup()
+    }
+    
+    // MARK: - Logic
+    
+    func setup() {
+        viewModel.sender = self
+        viewModel.requestLibraryAccess()
+    }
+    
+    func showAccessDeniedAlert() {
+        let alert = UIAlertController(title: "Denied", message: "Denied", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func showPhotoList() {
+        let alert = UIAlertController(title: "Authorized", message: "Authorized", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 }
