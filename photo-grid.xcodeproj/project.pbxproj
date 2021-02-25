@@ -92,15 +92,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		751C694925E70C4F00E73596 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				7586A6E725E7D233009D7A2D /* CustomTabBar */,
-				751C694A25E70C5800E73596 /* Extensions */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		751C694A25E70C5800E73596 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -142,7 +133,6 @@
 		75CDB80525E5C814000C114E /* photo-grid */ = {
 			isa = PBXGroup;
 			children = (
-				751C694925E70C4F00E73596 /* View */,
 				75CDB83F25E5C9DC000C114E /* App */,
 				75CDB83E25E5C9C0000C114E /* Services */,
 				75CDB83D25E5C9B0000C114E /* Models */,
@@ -174,6 +164,8 @@
 		75CDB83A25E5C967000C114E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7586A6E725E7D233009D7A2D /* CustomTabBar */,
+				751C694A25E70C5800E73596 /* Extensions */,
 			);
 			path = Views;
 			sourceTree = "<group>";
