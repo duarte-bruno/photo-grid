@@ -62,6 +62,9 @@ class CustomTabBar: UIView {
         
         view.backgroundColor = Constants.color().darkGray
         view.layer.cornerRadius = 25 // half of view's height
+        view.layer.borderWidth = 1
+        view.layer.borderColor = Constants.color().lightGray.cgColor
+        
         setupButtons()
     }
     
