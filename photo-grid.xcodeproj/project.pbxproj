@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		751C694525E70BE800E73596 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751C694425E70BE800E73596 /* Constants.swift */; };
 		751C694C25E70C7300E73596 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751C694B25E70C7300E73596 /* UIColorExtension.swift */; };
+		7586A6E325E7D1B4009D7A2D /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7586A6E225E7D1B4009D7A2D /* CustomTabBar.swift */; };
+		7586A6EA25E7D274009D7A2D /* CustomTabBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7586A6E925E7D274009D7A2D /* CustomTabBar.xib */; };
+		7586A6EF25E7E400009D7A2D /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7586A6EE25E7E400009D7A2D /* UIImageViewExtension.swift */; };
 		75CDB80725E5C814000C114E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CDB80625E5C814000C114E /* AppDelegate.swift */; };
 		75CDB81025E5C816000C114E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75CDB80F25E5C816000C114E /* Assets.xcassets */; };
 		75CDB81325E5C816000C114E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75CDB81125E5C816000C114E /* LaunchScreen.storyboard */; };
@@ -40,6 +43,9 @@
 /* Begin PBXFileReference section */
 		751C694425E70BE800E73596 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		751C694B25E70C7300E73596 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		7586A6E225E7D1B4009D7A2D /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		7586A6E925E7D274009D7A2D /* CustomTabBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTabBar.xib; sourceTree = "<group>"; };
+		7586A6EE25E7E400009D7A2D /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		75CDB80325E5C814000C114E /* photo-grid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "photo-grid.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		75CDB80625E5C814000C114E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75CDB80F25E5C816000C114E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -85,6 +91,7 @@
 		751C694925E70C4F00E73596 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7586A6E725E7D233009D7A2D /* CustomTabBar */,
 				751C694A25E70C5800E73596 /* Extensions */,
 			);
 			path = View;
@@ -94,8 +101,18 @@
 			isa = PBXGroup;
 			children = (
 				751C694B25E70C7300E73596 /* UIColorExtension.swift */,
+				7586A6EE25E7E400009D7A2D /* UIImageViewExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7586A6E725E7D233009D7A2D /* CustomTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				7586A6E225E7D1B4009D7A2D /* CustomTabBar.swift */,
+				7586A6E925E7D274009D7A2D /* CustomTabBar.xib */,
+			);
+			path = CustomTabBar;
 			sourceTree = "<group>";
 		};
 		75CDB7FA25E5C814000C114E = {
@@ -304,6 +321,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7586A6EA25E7D274009D7A2D /* CustomTabBar.xib in Resources */,
 				75CDB81325E5C816000C114E /* LaunchScreen.storyboard in Resources */,
 				75CDB84625E5CADB000C114E /* ListPhotosViewController.xib in Resources */,
 				75CDB81025E5C816000C114E /* Assets.xcassets in Resources */,
@@ -333,9 +351,11 @@
 			files = (
 				751C694525E70BE800E73596 /* Constants.swift in Sources */,
 				75CDB84525E5CADB000C114E /* ListPhotosViewController.swift in Sources */,
+				7586A6E325E7D1B4009D7A2D /* CustomTabBar.swift in Sources */,
 				75CDB85425E5CF97000C114E /* TabBarController.swift in Sources */,
 				75CDB84C25E5CB5E000C114E /* ListPhotosViewModel.swift in Sources */,
 				75CDB80725E5C814000C114E /* AppDelegate.swift in Sources */,
+				7586A6EF25E7E400009D7A2D /* UIImageViewExtension.swift in Sources */,
 				751C694C25E70C7300E73596 /* UIColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

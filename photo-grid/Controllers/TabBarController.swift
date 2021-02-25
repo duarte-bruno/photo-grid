@@ -19,18 +19,17 @@ class TabBarController: UITabBarController {
     // MARK: - Setup
 
     private func setup() {
-        let listPhotosItem = UITabBarItem(
-            title: "",
-            image: UIImage(named: "icon-home"),
-            selectedImage: UIImage(named: "icon-home"))
+        createTabsNavigation()
+        createCustomTabBar()
+    }
+    
+    private func createTabsNavigation() {
+        let listPhotosItem = UITabBarItem(title: "", image: nil, selectedImage: nil)
         let listPhotosViewController = ListPhotosViewController(nibName: "ListPhotosViewController", bundle: nil)
         listPhotosViewController.tabBarItem = listPhotosItem
         let photosNavigation = createNavigation(with: listPhotosViewController)
         
-        let takePhotoItem = UITabBarItem(
-            title: "",
-            image: UIImage(named: "icon-photo"),
-            selectedImage: UIImage(named: "icon-photo"))
+        let takePhotoItem = UITabBarItem(title: "", image: nil, selectedImage: nil)
         let takePhotoViewController = ListPhotosViewController(nibName: "ListPhotosViewController", bundle: nil)
         takePhotoViewController.tabBarItem = takePhotoItem
         let photoNavigation = createNavigation(with: takePhotoViewController)
@@ -38,10 +37,7 @@ class TabBarController: UITabBarController {
         self.viewControllers = [photosNavigation, photoNavigation]
         self.selectedViewController = photosNavigation
         self.selectedIndex = 0
-        self.tabBar.backgroundColor = .black
-        self.tabBar.barStyle = .default
-        self.tabBar.tintColor = Constants.color().blue
-        self.tabBar.unselectedItemTintColor = .white
+        self.tabBar.isHidden = true
     }
 
     private func createNavigation(with viewController: UIViewController) -> UINavigationController {
@@ -49,5 +45,29 @@ class TabBarController: UITabBarController {
         navigation.setNavigationBarHidden(true, animated: false)
 
         return navigation
+    }
+    
+    private func createCustomTabBar() {
+        let tabBar = CustomTabBar()
+        tabBar.delegate = self
+        view.addSubview(tabBar)
+
+        tabBar.translatesAutoresizingMaskIntoConstraints = false
+        let horizontalConstraint = tabBar.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        let bottomConstraint = tabBar.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor)
+        let widthConstraint = tabBar.widthAnchor.constraint(equalToConstant: 140)
+        let heightConstraint = tabBar.heightAnchor.constraint(equalToConstant: 50)
+        view.addConstraints([horizontalConstraint, bottomConstraint, widthConstraint, heightConstraint])
+    }
+}
+
+extension TabBarController: CustomTabBarDelegate {
+
+    func homeSelected() {
+        self.selectedIndex = 0
+    }
+    
+    func photoSelected() {
+        self.selectedIndex = 1
     }
 }

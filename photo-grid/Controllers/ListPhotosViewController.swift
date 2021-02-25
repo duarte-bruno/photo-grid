@@ -25,6 +25,7 @@ class ListPhotosViewController: UIViewController {
     func setup() {
         viewModel.sender = self
         viewModel.requestLibraryAccess()
+        view.backgroundColor = Constants.color().black
     }
     
     func showAccessDeniedAlert() {
