@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ListPhotosViewController" customModule="photo_grid" customModuleProvider="target">
             <connections>
+                <outlet property="photosView" destination="4Py-ng-uO8" id="is4-9d-fXq"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,8 +18,20 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Py-ng-uO8" customClass="PhotosView" customModule="photo_grid" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="4Py-ng-uO8" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="1LE-2m-DUu"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4Py-ng-uO8" secondAttribute="trailing" id="1qT-YV-OzG"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="4Py-ng-uO8" secondAttribute="bottom" id="Pe4-7M-bdf"/>
+                <constraint firstItem="4Py-ng-uO8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="fQe-gE-0nk"/>
+            </constraints>
             <point key="canvasLocation" x="140" y="129.98500749625188"/>
         </view>
     </objects>

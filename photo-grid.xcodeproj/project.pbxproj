@@ -14,6 +14,10 @@
 		7586A6EF25E7E400009D7A2D /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7586A6EE25E7E400009D7A2D /* UIImageViewExtension.swift */; };
 		7586A6F525E7F082009D7A2D /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7586A6F325E7F082009D7A2D /* InitialViewController.swift */; };
 		7586A6F625E7F082009D7A2D /* InitialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7586A6F425E7F082009D7A2D /* InitialViewController.xib */; };
+		7586A6FC25E8340C009D7A2D /* PhotosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7586A6FB25E8340C009D7A2D /* PhotosView.swift */; };
+		7586A70425E83427009D7A2D /* PhotosView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7586A70325E83427009D7A2D /* PhotosView.xib */; };
+		7586A70A25E83C20009D7A2D /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7586A70825E83C20009D7A2D /* PhotosCollectionViewCell.swift */; };
+		7586A70B25E83C20009D7A2D /* PhotosCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7586A70925E83C20009D7A2D /* PhotosCollectionViewCell.xib */; };
 		75CDB80725E5C814000C114E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CDB80625E5C814000C114E /* AppDelegate.swift */; };
 		75CDB81025E5C816000C114E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75CDB80F25E5C816000C114E /* Assets.xcassets */; };
 		75CDB81325E5C816000C114E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75CDB81125E5C816000C114E /* LaunchScreen.storyboard */; };
@@ -50,6 +54,10 @@
 		7586A6EE25E7E400009D7A2D /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		7586A6F325E7F082009D7A2D /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		7586A6F425E7F082009D7A2D /* InitialViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InitialViewController.xib; sourceTree = "<group>"; };
+		7586A6FB25E8340C009D7A2D /* PhotosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosView.swift; sourceTree = "<group>"; };
+		7586A70325E83427009D7A2D /* PhotosView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotosView.xib; sourceTree = "<group>"; };
+		7586A70825E83C20009D7A2D /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
+		7586A70925E83C20009D7A2D /* PhotosCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotosCollectionViewCell.xib; sourceTree = "<group>"; };
 		75CDB80325E5C814000C114E /* photo-grid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "photo-grid.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		75CDB80625E5C814000C114E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75CDB80F25E5C816000C114E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -110,6 +118,17 @@
 			path = CustomTabBar;
 			sourceTree = "<group>";
 		};
+		7586A6FA25E83319009D7A2D /* PhotosView */ = {
+			isa = PBXGroup;
+			children = (
+				7586A6FB25E8340C009D7A2D /* PhotosView.swift */,
+				7586A70325E83427009D7A2D /* PhotosView.xib */,
+				7586A70825E83C20009D7A2D /* PhotosCollectionViewCell.swift */,
+				7586A70925E83C20009D7A2D /* PhotosCollectionViewCell.xib */,
+			);
+			path = PhotosView;
+			sourceTree = "<group>";
+		};
 		75CDB7FA25E5C814000C114E = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +183,7 @@
 		75CDB83A25E5C967000C114E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7586A6FA25E83319009D7A2D /* PhotosView */,
 				7586A6E725E7D233009D7A2D /* CustomTabBar */,
 				751C694A25E70C5800E73596 /* Extensions */,
 			);
@@ -319,9 +339,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7586A70B25E83C20009D7A2D /* PhotosCollectionViewCell.xib in Resources */,
 				7586A6EA25E7D274009D7A2D /* CustomTabBar.xib in Resources */,
 				75CDB81325E5C816000C114E /* LaunchScreen.storyboard in Resources */,
 				7586A6F625E7F082009D7A2D /* InitialViewController.xib in Resources */,
+				7586A70425E83427009D7A2D /* PhotosView.xib in Resources */,
 				75CDB84625E5CADB000C114E /* ListPhotosViewController.xib in Resources */,
 				75CDB81025E5C816000C114E /* Assets.xcassets in Resources */,
 			);
@@ -353,8 +375,10 @@
 				7586A6E325E7D1B4009D7A2D /* CustomTabBar.swift in Sources */,
 				7586A6F525E7F082009D7A2D /* InitialViewController.swift in Sources */,
 				75CDB85425E5CF97000C114E /* TabBarController.swift in Sources */,
+				7586A70A25E83C20009D7A2D /* PhotosCollectionViewCell.swift in Sources */,
 				75CDB84C25E5CB5E000C114E /* ListPhotosViewModel.swift in Sources */,
 				75CDB80725E5C814000C114E /* AppDelegate.swift in Sources */,
+				7586A6FC25E8340C009D7A2D /* PhotosView.swift in Sources */,
 				7586A6EF25E7E400009D7A2D /* UIImageViewExtension.swift in Sources */,
 				751C694C25E70C7300E73596 /* UIColorExtension.swift in Sources */,
 			);

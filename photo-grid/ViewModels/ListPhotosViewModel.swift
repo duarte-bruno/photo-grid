@@ -10,6 +10,7 @@ import PhotosUI
 protocol ListPhotosViewModelDelegate: class {
     func libraryAccessGranted()
     func libraryAccessDenied()
+    func photosFetched(_ photos: [String])
 }
 
 class ListPhotosViewModel {
@@ -31,5 +32,10 @@ class ListPhotosViewModel {
                 }
             }
         }
+    }
+    
+    func fetchPhotos() {
+        let photos = ["","","","","","","","","","","","","","","","","","","","","","","","",""]
+        delegate?.photosFetched(photos)
     }
 }
