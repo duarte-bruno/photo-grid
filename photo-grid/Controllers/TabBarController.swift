@@ -20,26 +20,33 @@ class TabBarController: UITabBarController {
 
     private func setup() {
         let listPhotosItem = UITabBarItem(
-            title: "Photos",
-            image: nil,
-            selectedImage: nil)
+            title: "",
+            image: UIImage(named: "icon-home"),
+            selectedImage: UIImage(named: "icon-home"))
         let listPhotosViewController = ListPhotosViewController(nibName: "ListPhotosViewController", bundle: nil)
         listPhotosViewController.tabBarItem = listPhotosItem
         let photosNavigation = createNavigation(with: listPhotosViewController)
+        
+        let takePhotoItem = UITabBarItem(
+            title: "",
+            image: UIImage(named: "icon-photo"),
+            selectedImage: UIImage(named: "icon-photo"))
+        let takePhotoViewController = ListPhotosViewController(nibName: "ListPhotosViewController", bundle: nil)
+        takePhotoViewController.tabBarItem = takePhotoItem
+        let photoNavigation = createNavigation(with: takePhotoViewController)
 
-        self.viewControllers = [photosNavigation]
+        self.viewControllers = [photosNavigation, photoNavigation]
         self.selectedViewController = photosNavigation
         self.selectedIndex = 0
+        self.tabBar.backgroundColor = .black
+        self.tabBar.barStyle = .default
+        self.tabBar.tintColor = Constants.color().blue
+        self.tabBar.unselectedItemTintColor = .white
     }
 
     private func createNavigation(with viewController: UIViewController) -> UINavigationController {
         let navigation = UINavigationController(rootViewController: viewController)
-        navigation.navigationBar.prefersLargeTitles = true
-        let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        navigation.navigationBar.titleTextAttributes = textAttributes
-        navigation.navigationBar.largeTitleTextAttributes = textAttributes
-        navigation.navigationBar.barStyle = .black
-        navigation.navigationBar.tintColor = .white
+        navigation.setNavigationBarHidden(true, animated: false)
 
         return navigation
     }
