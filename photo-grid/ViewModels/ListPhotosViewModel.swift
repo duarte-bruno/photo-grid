@@ -7,11 +7,16 @@
 
 import PhotosUI
 
+protocol ListPhotosViewModelDelegate: class {
+    func libraryAccessGranted()
+    func libraryAccessDenied()
+}
+
 class ListPhotosViewModel {
     
     // MARK: - Attributes
     
-    var sender: ListPhotosViewController? = nil
+    var delegate: ListPhotosViewModelDelegate? = nil
     
     // MARK: - Logic
     
@@ -20,9 +25,9 @@ class ListPhotosViewModel {
             DispatchQueue.main.async { [weak self] in
                 switch status {
                 case .authorized:
-                    self?.sender?.showPhotoList()
+                    self?.delegate?.libraryAccessGranted()
                 default:
-                    self?.sender?.showAccessDeniedAlert()
+                    self?.delegate?.libraryAccessDenied()
                 }
             }
         }

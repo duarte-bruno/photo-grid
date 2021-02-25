@@ -54,7 +54,7 @@ class TabBarController: UITabBarController {
 
         tabBar.translatesAutoresizingMaskIntoConstraints = false
         let horizontalConstraint = tabBar.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-        let bottomConstraint = tabBar.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor)
+        let bottomConstraint = tabBar.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor, constant: -10)
         let widthConstraint = tabBar.widthAnchor.constraint(equalToConstant: 140)
         let heightConstraint = tabBar.heightAnchor.constraint(equalToConstant: 50)
         view.addConstraints([horizontalConstraint, bottomConstraint, widthConstraint, heightConstraint])

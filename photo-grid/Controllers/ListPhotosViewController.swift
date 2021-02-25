@@ -22,20 +22,23 @@ class ListPhotosViewController: UIViewController {
     
     // MARK: - Logic
     
-    func setup() {
-        viewModel.sender = self
+    private func setup() {
+        viewModel.delegate = self
         viewModel.requestLibraryAccess()
         view.backgroundColor = Constants.color().black
     }
-    
-    func showAccessDeniedAlert() {
-        let alert = UIAlertController(title: "Denied", message: "Denied", preferredStyle: UIAlertController.Style.alert)
+}
+
+extension ListPhotosViewController: ListPhotosViewModelDelegate {
+
+    internal func libraryAccessGranted() {
+        let alert = UIAlertController(title: "Authorized", message: "Authorized", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
     
-    func showPhotoList() {
-        let alert = UIAlertController(title: "Authorized", message: "Authorized", preferredStyle: UIAlertController.Style.alert)
+    internal func libraryAccessDenied() {
+        let alert = UIAlertController(title: "Denied", message: "Denied", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
