@@ -36,13 +36,13 @@ class CustomTabBar: UIView {
     
     // MARK: - Actions
     
-    @IBAction func homeButtonTap(_ sender: UIButton) {
+    @IBAction private func homeButtonTap(_ sender: UIButton) {
         setSelected(homeImage)
         setUnselected(photoImage)
         delegate?.homeSelected()
     }
     
-    @IBAction func photoButtonTap(_ sender: UIButton) {
+    @IBAction private func photoButtonTap(_ sender: UIButton) {
         setSelected(photoImage)
         setUnselected(homeImage)
         delegate?.photoSelected()
