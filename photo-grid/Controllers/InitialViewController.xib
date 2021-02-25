@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InitialViewController" customModule="photo_grid" customModuleProvider="target">
+            <connections>
+                <outlet property="logoImage" destination="rN2-Wp-fvC" id="qwc-59-5VP"/>
+                <outlet property="madeByLabel" destination="hal-dl-ij7" id="MLx-CA-RiR"/>
+                <outlet property="nameLabel" destination="j4Q-bd-3Ye" id="BVD-EW-zbd"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bruno Duarte" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4Q-bd-3Ye">
+                    <rect key="frame" x="0.0" y="636" width="375" height="21"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="made by" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hal-dl-ij7">
+                    <rect key="frame" x="0.0" y="610" width="375" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photogrid-logo-color" translatesAutoresizingMaskIntoConstraints="NO" id="rN2-Wp-fvC">
+                    <rect key="frame" x="122" y="238" width="131" height="131"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="rN2-Wp-fvC" secondAttribute="height" multiplier="1:1" id="5t0-cJ-Pam"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="hal-dl-ij7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="1Kf-Ay-7ro"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="j4Q-bd-3Ye" secondAttribute="bottom" constant="10" id="DyP-js-Saf"/>
+                <constraint firstItem="j4Q-bd-3Ye" firstAttribute="top" secondItem="hal-dl-ij7" secondAttribute="bottom" constant="5" id="Rup-ab-dEJ"/>
+                <constraint firstItem="rN2-Wp-fvC" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Tpf-Fu-BbW"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="j4Q-bd-3Ye" secondAttribute="trailing" id="W6B-HU-FHd"/>
+                <constraint firstItem="rN2-Wp-fvC" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" constant="-30" id="ibI-hq-4sp"/>
+                <constraint firstItem="j4Q-bd-3Ye" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="o6f-ip-TZg"/>
+                <constraint firstItem="rN2-Wp-fvC" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.35" id="pNJ-C7-qfX"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hal-dl-ij7" secondAttribute="trailing" id="ySo-vR-eBW"/>
+            </constraints>
+            <point key="canvasLocation" x="-41" y="-21"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="photogrid-logo-color" width="124" height="124"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

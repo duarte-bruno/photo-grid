@@ -15,41 +15,8 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bruno Duarte" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Aq-hy-oge">
-                                <rect key="frame" x="0.0" y="821" width="414" height="21"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.70588235290000001" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wBe-AC-W4g">
-                                <rect key="frame" x="145" y="351" width="124" height="124"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="wBe-AC-W4g" secondAttribute="height" multiplier="1:1" id="ckS-C0-5uP"/>
-                                </constraints>
-                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="made by" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iHX-NK-La6">
-                                <rect key="frame" x="0.0" y="795.66666666666663" width="414" height="20.333333333333371"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="2Aq-hy-oge" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="HpF-Ss-wd4"/>
-                            <constraint firstAttribute="trailing" secondItem="iHX-NK-La6" secondAttribute="trailing" id="KYB-0d-9WJ"/>
-                            <constraint firstItem="2Aq-hy-oge" firstAttribute="top" secondItem="iHX-NK-La6" secondAttribute="bottom" constant="5" id="Q9K-lJ-ily"/>
-                            <constraint firstItem="wBe-AC-W4g" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="e6x-T2-j8S"/>
-                            <constraint firstItem="wBe-AC-W4g" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.3" id="icw-mb-ptp"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="2Aq-hy-oge" secondAttribute="bottom" constant="20" id="kzP-Ue-tRt"/>
-                            <constraint firstItem="iHX-NK-La6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="oWl-1i-3Sx"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2Aq-hy-oge" secondAttribute="trailing" id="wo8-Ci-gMM"/>
-                            <constraint firstItem="wBe-AC-W4g" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-35" id="xDE-c3-Nbu"/>
-                        </constraints>
+                        <color key="backgroundColor" red="0.10980392156862745" green="0.10980392156862745" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
