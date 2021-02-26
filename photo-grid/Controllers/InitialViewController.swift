@@ -50,10 +50,10 @@ class InitialViewController: UIViewController {
     private func showMainScreen() {
         let seconds = 2.0
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
-            let tabBarController = TabBarController()
-            tabBarController.modalPresentationStyle = .fullScreen
-            tabBarController.modalTransitionStyle = .crossDissolve
-            self.navigationController?.present(tabBarController, animated: true, completion: nil)
+            let listPhotosViewController = ListPhotosViewController()
+            listPhotosViewController.modalPresentationStyle = .fullScreen
+            listPhotosViewController.modalTransitionStyle = .crossDissolve
+            self.navigationController?.present(listPhotosViewController, animated: true, completion: nil)
         }
     }
 }

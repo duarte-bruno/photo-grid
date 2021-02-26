@@ -25,6 +25,6 @@ class PhotosCollectionViewCell: UICollectionViewCell {
     private func basicSetup() {
         contentView.layer.cornerRadius = 5
         contentView.clipsToBounds = true
-        contentView.transform = CGAffineTransform(scaleX: 1, y: -1)
+        //contentView.transform = CGAffineTransform(scaleX: 1, y: -1)
     }
 }

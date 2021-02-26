@@ -83,7 +83,7 @@ class PhotosView: UIView {
         refreshControl.addTarget(self, action: #selector(refreshContent), for: .valueChanged)
         collectionView.refreshControl = refreshControl
         
-        collectionView.transform = CGAffineTransform(scaleX: 1, y: -1)
+        //collectionView.transform = CGAffineTransform(scaleX: 1, y: -1)
     }
     
     func reloadData() {

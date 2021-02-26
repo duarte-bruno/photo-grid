@@ -11,7 +11,8 @@ class ListPhotosViewController: UIViewController {
 
     // MARK: - Attributes
     
-    @IBOutlet weak var photosView: PhotosView!
+    @IBOutlet private weak var photosView: PhotosView!
+    @IBOutlet private weak var tabBar: CustomTabBar!
     
     private var viewModel = ListPhotosViewModel()
     

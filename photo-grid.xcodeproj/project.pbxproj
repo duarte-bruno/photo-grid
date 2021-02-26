@@ -26,7 +26,6 @@
 		75CDB84525E5CADB000C114E /* ListPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CDB84325E5CADB000C114E /* ListPhotosViewController.swift */; };
 		75CDB84625E5CADB000C114E /* ListPhotosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75CDB84425E5CADB000C114E /* ListPhotosViewController.xib */; };
 		75CDB84C25E5CB5E000C114E /* ListPhotosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CDB84B25E5CB5E000C114E /* ListPhotosViewModel.swift */; };
-		75CDB85425E5CF97000C114E /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CDB85325E5CF97000C114E /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,7 +71,6 @@
 		75CDB84325E5CADB000C114E /* ListPhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPhotosViewController.swift; sourceTree = "<group>"; };
 		75CDB84425E5CADB000C114E /* ListPhotosViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListPhotosViewController.xib; sourceTree = "<group>"; };
 		75CDB84B25E5CB5E000C114E /* ListPhotosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPhotosViewModel.swift; sourceTree = "<group>"; };
-		75CDB85325E5CF97000C114E /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,7 +201,6 @@
 			children = (
 				75CDB84325E5CADB000C114E /* ListPhotosViewController.swift */,
 				75CDB84425E5CADB000C114E /* ListPhotosViewController.xib */,
-				75CDB85325E5CF97000C114E /* TabBarController.swift */,
 				7586A6F325E7F082009D7A2D /* InitialViewController.swift */,
 				7586A6F425E7F082009D7A2D /* InitialViewController.xib */,
 			);
@@ -374,7 +371,6 @@
 				75CDB84525E5CADB000C114E /* ListPhotosViewController.swift in Sources */,
 				7586A6E325E7D1B4009D7A2D /* CustomTabBar.swift in Sources */,
 				7586A6F525E7F082009D7A2D /* InitialViewController.swift in Sources */,
-				75CDB85425E5CF97000C114E /* TabBarController.swift in Sources */,
 				7586A70A25E83C20009D7A2D /* PhotosCollectionViewCell.swift in Sources */,
 				75CDB84C25E5CB5E000C114E /* ListPhotosViewModel.swift in Sources */,
 				75CDB80725E5C814000C114E /* AppDelegate.swift in Sources */,
