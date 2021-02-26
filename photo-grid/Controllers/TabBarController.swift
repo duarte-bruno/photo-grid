@@ -48,16 +48,16 @@ class TabBarController: UITabBarController {
     }
     
     private func createCustomTabBar() {
-        let tabBar = CustomTabBar()
-        tabBar.delegate = self
-        view.addSubview(tabBar)
-
-        tabBar.translatesAutoresizingMaskIntoConstraints = false
-        let horizontalConstraint = tabBar.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-        let bottomConstraint = tabBar.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor, constant: -10)
-        let widthConstraint = tabBar.widthAnchor.constraint(equalToConstant: 140)
-        let heightConstraint = tabBar.heightAnchor.constraint(equalToConstant: 50)
-        view.addConstraints([horizontalConstraint, bottomConstraint, widthConstraint, heightConstraint])
+//        let tabBar = CustomTabBar()
+//        tabBar.delegate = self
+//        view.addSubview(tabBar)
+//
+//        tabBar.translatesAutoresizingMaskIntoConstraints = false
+//        let horizontalConstraint = tabBar.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+//        let bottomConstraint = tabBar.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor)
+//        let widthConstraint = tabBar.widthAnchor.constraint(equalTo: view.widthAnchor)
+//        let heightConstraint = tabBar.heightAnchor.constraint(equalToConstant: 70)
+//        view.addConstraints([horizontalConstraint, bottomConstraint, widthConstraint, heightConstraint])
     }
 }
 

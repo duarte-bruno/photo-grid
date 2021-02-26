@@ -17,7 +17,7 @@ class CustomTabBar: UIView {
     // MARK: - Attributes
     
     @IBOutlet var view: UIView!
-    @IBOutlet private weak var homeImage: UIImageView!
+    @IBOutlet private weak var backView: UIView!
     @IBOutlet private weak var photoImage: UIImageView!
     
     weak var delegate: CustomTabBarDelegate?
@@ -36,15 +36,8 @@ class CustomTabBar: UIView {
     
     // MARK: - Actions
     
-    @IBAction private func homeButtonTap(_ sender: UIButton) {
-        setSelected(homeImage)
-        setUnselected(photoImage)
-        delegate?.homeSelected()
-    }
-    
     @IBAction private func photoButtonTap(_ sender: UIButton) {
         setSelected(photoImage)
-        setUnselected(homeImage)
         delegate?.photoSelected()
     }
     
@@ -60,24 +53,17 @@ class CustomTabBar: UIView {
         addSubview(view)
         view.frame = bounds
         
-        view.backgroundColor = Constants.color().darkGray
-        view.layer.cornerRadius = 25 // half of view's height
-        view.layer.borderWidth = 1
-        view.layer.borderColor = Constants.color().lightGray.cgColor
+        view.backgroundColor = Constants.color().black
+        backView.layer.cornerRadius = 23
         
         setupButtons()
     }
     
     private func setupButtons() {
-        setSelected(homeImage)
-        setUnselected(photoImage)
+        setSelected(photoImage)
     }
     
     private func setSelected(_ image: UIImageView) {
-        image.setImageColor(Constants.color().blue)
-    }
-    
-    private func setUnselected(_ image: UIImageView) {
-        image.setImageColor(Constants.color().lightGray)
+        image.setImageColor(Constants.color().black)
     }
 }

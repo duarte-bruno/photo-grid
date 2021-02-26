@@ -20,17 +20,27 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Py-ng-uO8" customClass="PhotosView" customModule="photo_grid" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="597"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eeK-v8-hcG" customClass="CustomTabBar" customModule="photo_grid" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="597" width="375" height="70"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="70" id="bvY-gf-kCJ"/>
+                    </constraints>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="4Py-ng-uO8" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="1LE-2m-DUu"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4Py-ng-uO8" secondAttribute="trailing" id="1qT-YV-OzG"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="4Py-ng-uO8" secondAttribute="bottom" id="Pe4-7M-bdf"/>
+                <constraint firstItem="4Py-ng-uO8" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="eYx-f3-hdZ"/>
                 <constraint firstItem="4Py-ng-uO8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="fQe-gE-0nk"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="eeK-v8-hcG" secondAttribute="bottom" id="m2B-Ei-pNB"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="eeK-v8-hcG" secondAttribute="trailing" id="oQG-UX-i5r"/>
+                <constraint firstItem="eeK-v8-hcG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="x6U-fV-N4n"/>
+                <constraint firstItem="eeK-v8-hcG" firstAttribute="top" secondItem="4Py-ng-uO8" secondAttribute="bottom" id="zhQ-Qe-oRp"/>
             </constraints>
             <point key="canvasLocation" x="140" y="129.98500749625188"/>
         </view>
