@@ -6,12 +6,13 @@
 //
 
 import UIKit
+import PhotosUI
 
 class PhotosCollectionViewCell: UICollectionViewCell {
 
     // MARK: - Attributes
     
-    @IBOutlet private weak var image: UIImageView!
+    @IBOutlet private weak var mainImage: CustomImageView!
     
     // MARK: - Class lifecycle
 
@@ -26,5 +27,9 @@ class PhotosCollectionViewCell: UICollectionViewCell {
         contentView.layer.cornerRadius = 5
         contentView.clipsToBounds = true
         //contentView.transform = CGAffineTransform(scaleX: 1, y: -1)
+    }
+    
+    func setup(_ phAsset: PHAsset) {
+        mainImage.loadThumbnail(phAsset)
     }
 }

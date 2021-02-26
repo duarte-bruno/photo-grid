@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PhotosUI
 
 protocol PhotosViewDelegate: class {
     func didSelect(photo: String)
@@ -21,7 +22,7 @@ class PhotosView: UIView {
     @IBOutlet private weak var collectionView: UICollectionView!
     
     private let cellIdentifier = "PhotosCollectionViewCell"
-    var photos: [String] = []
+    var photos: PHFetchResult<PHAsset> = PHFetchResult()
     weak var delegate: PhotosViewDelegate?
     
     // MARK: - Class lifecycle
@@ -100,22 +101,20 @@ extension PhotosView: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: cellIdentifier, for: indexPath) as! PhotosCollectionViewCell
-
-        //cell.setupCell(with: movies[indexPath.row])
-
+        cell.setup(photos.object(at: indexPath.row))
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let viewController = delegate {
-            viewController.didSelect(photo: photos[indexPath.row])
+            //viewController.didSelect(photo: photos[indexPath.row])
         }
     }
 
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if indexPath.row == photos.count - 1 {
             if let viewController = delegate {
-                viewController.loadMoreData()
+                //viewController.loadMoreData()
             }
         }
     }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PhotosUI
 
 class ListPhotosViewController: UIViewController {
 
@@ -46,7 +47,7 @@ extension ListPhotosViewController: ListPhotosViewModelDelegate {
         present(alert, animated: true, completion: nil)
     }
     
-    internal func photosFetched(_ photos: [String]) {
+    internal func photosFetched(_ photos: PHFetchResult<PHAsset>) {
         photosView.photos = photos
         photosView.reloadData()
     }
