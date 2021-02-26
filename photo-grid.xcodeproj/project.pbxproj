@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		751A296625E935FC004CA006 /* PhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751A296525E935FC004CA006 /* PhotoService.swift */; };
 		751C694525E70BE800E73596 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751C694425E70BE800E73596 /* Constants.swift */; };
 		751C694C25E70C7300E73596 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751C694B25E70C7300E73596 /* UIColorExtension.swift */; };
 		7586A6E325E7D1B4009D7A2D /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7586A6E225E7D1B4009D7A2D /* CustomTabBar.swift */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		751A296525E935FC004CA006 /* PhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoService.swift; sourceTree = "<group>"; };
 		751C694425E70BE800E73596 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		751C694B25E70C7300E73596 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		7586A6E225E7D1B4009D7A2D /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 		75CDB83E25E5C9C0000C114E /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				751A296525E935FC004CA006 /* PhotoService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -368,6 +371,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				751C694525E70BE800E73596 /* Constants.swift in Sources */,
+				751A296625E935FC004CA006 /* PhotoService.swift in Sources */,
 				75CDB84525E5CADB000C114E /* ListPhotosViewController.swift in Sources */,
 				7586A6E325E7D1B4009D7A2D /* CustomTabBar.swift in Sources */,
 				7586A6F525E7F082009D7A2D /* InitialViewController.swift in Sources */,
