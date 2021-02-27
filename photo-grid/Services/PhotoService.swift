@@ -7,6 +7,10 @@
 
 import PhotosUI
 
+protocol PhotoServiceDelegate: class {
+    func progressChanged(progress: Float)
+}
+
 class PhotoService: NSObject {
 
     // MARK: - Attributes
@@ -14,9 +18,30 @@ class PhotoService: NSObject {
     var fetchResult: PHFetchResult<PHAsset>!
     private var assetCollection: PHAssetCollection!
     let imageManager = PHCachingImageManager()
-    private var thumbnailSize: CGSize!
+    private var imageSize: CGSize!
+    private var delegate: PhotoServiceDelegate?
+    private let options = PHImageRequestOptions()
+
+    // MARK: - Class lifecycle
+
+    init(_ delegate: PhotoServiceDelegate? = nil) {
+        self.delegate = delegate
+        super.init()
+
+        if delegate != nil {
+            setup()
+        }
+    }
 
     // MARK: - Logic
+
+    private func setup() {
+        options.deliveryMode = .highQualityFormat
+        options.isNetworkAccessAllowed = true
+        options.progressHandler = { [weak self] progress, _, _, _ in
+            self?.delegate?.progressChanged(progress: Float(progress))
+        }
+    }
 
     /// Request the access to Photo Library
     static func requestLibraryAccess(completion: @escaping (Bool) -> Void) {
@@ -38,13 +63,25 @@ class PhotoService: NSObject {
         }
     }
 
-    func setThumbnailSize(cellSize: CGSize) {
+    func fetchPhoto(_ phAsset: PHAsset, completion: @escaping (UIImage) -> Void) {
+        PHImageManager.default().requestImage(
+            for: phAsset,
+            targetSize: imageSize,
+            contentMode: .aspectFit,
+            options: options,
+            resultHandler: { image, _ in
+                guard let image = image else { return }
+                completion(image)
+        })
+    }
+
+    func setImageSize(containerSize: CGSize) {
         let scale = UIScreen.main.scale
-        thumbnailSize = CGSize(width: cellSize.width * scale, height: cellSize.height * scale)
+        imageSize = CGSize(width: containerSize.width * scale, height: containerSize.height * scale)
     }
 
     func requestThumbnail(_ asset: PHAsset, completion: @escaping (UIImage?) -> Void) {
-        imageManager.requestImage(for: asset, targetSize: thumbnailSize, contentMode: .aspectFill, options: nil) { (image, _) in
+        imageManager.requestImage(for: asset, targetSize: imageSize, contentMode: .aspectFill, options: nil) { (image, _) in
             completion(image)
         }
     }
@@ -61,8 +98,8 @@ class PhotoService: NSObject {
 
         // Update the assets the PHCachingImageManager is caching.
         imageManager.startCachingImages(for: addedAssets,
-                                        targetSize: thumbnailSize, contentMode: .aspectFill, options: nil)
+                                        targetSize: imageSize, contentMode: .aspectFill, options: nil)
         imageManager.stopCachingImages(for: removedAssets,
-                                       targetSize: thumbnailSize, contentMode: .aspectFill, options: nil)
+                                       targetSize: imageSize, contentMode: .aspectFill, options: nil)
     }
 }

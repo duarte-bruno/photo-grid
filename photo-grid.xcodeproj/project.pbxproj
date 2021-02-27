@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		75085BEC25EAE2F900EC331C /* ShowPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75085BEA25EAE2F900EC331C /* ShowPhotoViewController.swift */; };
+		75085BED25EAE2F900EC331C /* ShowPhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75085BEB25EAE2F900EC331C /* ShowPhotoViewController.xib */; };
 		751A296625E935FC004CA006 /* PhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751A296525E935FC004CA006 /* PhotoService.swift */; };
 		751C694525E70BE800E73596 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751C694425E70BE800E73596 /* Constants.swift */; };
 		751C694C25E70C7300E73596 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751C694B25E70C7300E73596 /* UIColorExtension.swift */; };
@@ -47,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		75085BEA25EAE2F900EC331C /* ShowPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowPhotoViewController.swift; sourceTree = "<group>"; };
+		75085BEB25EAE2F900EC331C /* ShowPhotoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowPhotoViewController.xib; sourceTree = "<group>"; };
 		751A296525E935FC004CA006 /* PhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoService.swift; sourceTree = "<group>"; };
 		751C694425E70BE800E73596 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		751C694B25E70C7300E73596 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
@@ -205,6 +209,8 @@
 				75CDB84425E5CADB000C114E /* ListPhotosViewController.xib */,
 				7586A6F325E7F082009D7A2D /* InitialViewController.swift */,
 				7586A6F425E7F082009D7A2D /* InitialViewController.xib */,
+				75085BEA25EAE2F900EC331C /* ShowPhotoViewController.swift */,
+				75085BEB25EAE2F900EC331C /* ShowPhotoViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -345,6 +351,7 @@
 				7586A6F625E7F082009D7A2D /* InitialViewController.xib in Resources */,
 				7586A70425E83427009D7A2D /* PhotosView.xib in Resources */,
 				75CDB84625E5CADB000C114E /* ListPhotosViewController.xib in Resources */,
+				75085BED25EAE2F900EC331C /* ShowPhotoViewController.xib in Resources */,
 				75CDB81025E5C816000C114E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -376,6 +383,7 @@
 				7586A6E325E7D1B4009D7A2D /* CustomTabBar.swift in Sources */,
 				7586A6F525E7F082009D7A2D /* InitialViewController.swift in Sources */,
 				7586A70A25E83C20009D7A2D /* PhotosCollectionViewCell.swift in Sources */,
+				75085BEC25EAE2F900EC331C /* ShowPhotoViewController.swift in Sources */,
 				75CDB84C25E5CB5E000C114E /* ListPhotosViewModel.swift in Sources */,
 				75CDB80725E5C814000C114E /* AppDelegate.swift in Sources */,
 				7586A6FC25E8340C009D7A2D /* PhotosView.swift in Sources */,

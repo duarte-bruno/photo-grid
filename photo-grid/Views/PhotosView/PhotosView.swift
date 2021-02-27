@@ -9,7 +9,7 @@ import UIKit
 import PhotosUI
 
 protocol PhotosViewDelegate: class {
-    func didSelect(photo: String)
+    func showPhotoDetail(phAsset: PHAsset)
 }
 
 class PhotosView: UIView {
@@ -53,7 +53,7 @@ class PhotosView: UIView {
         PHPhotoLibrary.shared().register(self)
 
         setupCollectionView()
-        photoService.setThumbnailSize(cellSize: collectionViewFlowLayout.itemSize)
+        photoService.setImageSize(containerSize: collectionViewFlowLayout.itemSize)
 
         updateCachedAssets()
     }
@@ -172,7 +172,7 @@ extension PhotosView: UICollectionViewDelegate, UICollectionViewDataSource {
     }
 
     internal func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // TODO: Show detail
+        delegate?.showPhotoDetail(phAsset: photoService.fetchResult.object(at: indexPath.row))
     }
 }
 

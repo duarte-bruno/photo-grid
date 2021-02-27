@@ -51,9 +51,13 @@ class InitialViewController: UIViewController {
         let seconds = 2.0
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
             let listPhotosViewController = ListPhotosViewController()
-            listPhotosViewController.modalPresentationStyle = .fullScreen
-            listPhotosViewController.modalTransitionStyle = .crossDissolve
-            self.navigationController?.present(listPhotosViewController, animated: true, completion: nil)
+
+            let navigation = UINavigationController(rootViewController: listPhotosViewController)
+            navigation.modalPresentationStyle = .fullScreen
+            navigation.modalTransitionStyle = .crossDissolve
+            navigation.isNavigationBarHidden = true
+
+            self.navigationController?.present(navigation, animated: true, completion: nil)
         }
     }
 }

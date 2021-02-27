@@ -62,7 +62,9 @@ extension ListPhotosViewController: ListPhotosViewModelDelegate {
 
 extension ListPhotosViewController: PhotosViewDelegate {
 
-    internal func didSelect(photo: String) {
-        // TODO: Show the big image detail
+    func showPhotoDetail(phAsset: PHAsset) {
+        let viewController = ShowPhotoViewController()
+        viewController.phAsset = phAsset
+        self.navigationController?.present(viewController, animated: true, completion: nil)
     }
 }
