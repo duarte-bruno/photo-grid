@@ -16,6 +16,7 @@ class ShowPhotoViewController: UIViewController {
     @IBOutlet private weak var barProgressView: UIProgressView!
     @IBOutlet private weak var pullBarView: UIView!
     @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet private weak var scrollView: UIScrollView!
 
     var phAsset: PHAsset? = nil
     private var photoService: PhotoService? = nil
@@ -31,6 +32,7 @@ class ShowPhotoViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         setupMainImage()
+        setupScrollView()
     }
 
     // MARK: - Logic
@@ -47,7 +49,18 @@ class ShowPhotoViewController: UIViewController {
         photoService?.setImageSize(containerSize: mainImageView.bounds.size)
     }
 
+    private func setupScrollView() {
+        guard mainImageView.image == nil else { return }
+        scrollView.delegate = self
+
+        scrollView.minimumZoomScale = 1.0
+        scrollView.maximumZoomScale = 5.0
+
+        scrollView.contentSize = .init(width: scrollView.bounds.width, height: scrollView.bounds.height)
+    }
+
     private func setupMainImage() {
+        guard mainImageView.image == nil else { return }
         guard let phAsset = phAsset else { return }
 
         photoService?.fetchPhoto(phAsset, completion: { [weak self] (image) in
@@ -69,9 +82,15 @@ class ShowPhotoViewController: UIViewController {
 }
 
 extension ShowPhotoViewController: PhotoServiceDelegate {
-    func progressChanged(progress: Float) {
+    internal func progressChanged(progress: Float) {
         DispatchQueue.main.async { [weak self] in
             self?.barProgressView.progress = progress
         }
+    }
+}
+
+extension ShowPhotoViewController: UIScrollViewDelegate {
+    internal func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return mainImageView
     }
 }

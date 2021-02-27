@@ -15,6 +15,7 @@
                 <outlet property="barProgressView" destination="JG0-7n-vJ3" id="vaj-yS-dah"/>
                 <outlet property="mainImageView" destination="g6y-Wn-bw0" id="lai-Oz-TdZ"/>
                 <outlet property="pullBarView" destination="uWH-6y-3yX" id="DK1-qj-jSj"/>
+                <outlet property="scrollView" destination="ddd-4J-dQv" id="eDa-jA-qGF"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,10 +24,34 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g6y-Wn-bw0">
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="hQf-Ds-4aD">
+                    <rect key="frame" x="197" y="358" width="20" height="20"/>
+                </activityIndicatorView>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddd-4J-dQv">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g6y-Wn-bw0">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </imageView>
+                    </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                </imageView>
+                    <constraints>
+                        <constraint firstItem="g6y-Wn-bw0" firstAttribute="centerX" secondItem="ddd-4J-dQv" secondAttribute="centerX" id="FUf-R3-2wN"/>
+                        <constraint firstItem="g6y-Wn-bw0" firstAttribute="centerY" secondItem="ddd-4J-dQv" secondAttribute="centerY" id="jbh-9P-EXM"/>
+                        <constraint firstItem="g6y-Wn-bw0" firstAttribute="height" secondItem="ddd-4J-dQv" secondAttribute="height" id="mwc-xQ-kwE"/>
+                        <constraint firstItem="g6y-Wn-bw0" firstAttribute="width" secondItem="ddd-4J-dQv" secondAttribute="width" id="zzB-KB-InQ"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="vKt-tw-CWq"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="rDz-Jb-v2o"/>
+                </scrollView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UtT-Es-viZ">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="30"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="z3O-Y2-CE3"/>
+                    </constraints>
+                </view>
                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" translatesAutoresizingMaskIntoConstraints="NO" id="JG0-7n-vJ3">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="2.666666666666667"/>
                     <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -38,27 +63,27 @@
                         <constraint firstAttribute="height" constant="2" id="bMO-AF-HTg"/>
                     </constraints>
                 </view>
-                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="hQf-Ds-4aD">
-                    <rect key="frame" x="197" y="358" width="20" height="20"/>
-                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="uWH-6y-3yX" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="0mo-Ky-dcO"/>
                 <constraint firstItem="hQf-Ds-4aD" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="4TF-gx-in3"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ddd-4J-dQv" secondAttribute="trailing" id="8ve-wn-WVl"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="JG0-7n-vJ3" secondAttribute="trailing" id="9fI-Do-CHZ"/>
                 <constraint firstItem="JG0-7n-vJ3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="D0W-si-Lpa"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="g6y-Wn-bw0" secondAttribute="trailing" id="D8A-Gu-mrf"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="g6y-Wn-bw0" secondAttribute="bottom" id="E7s-5s-yoL"/>
                 <constraint firstItem="hQf-Ds-4aD" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="F72-Hf-K4P"/>
-                <constraint firstItem="uWH-6y-3yX" firstAttribute="width" secondItem="g6y-Wn-bw0" secondAttribute="width" multiplier="0.3" id="LLy-bm-23w"/>
-                <constraint firstItem="g6y-Wn-bw0" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Q7h-Ry-BZs"/>
-                <constraint firstItem="g6y-Wn-bw0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="QMm-Ly-Rsn"/>
+                <constraint firstItem="ddd-4J-dQv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="JYf-xl-z9I"/>
+                <constraint firstItem="uWH-6y-3yX" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.3" id="LDt-hN-7Sc"/>
                 <constraint firstItem="JG0-7n-vJ3" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="TaR-vl-TwS"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="UtT-Es-viZ" secondAttribute="trailing" id="W80-Rr-Jjv"/>
+                <constraint firstItem="ddd-4J-dQv" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="WDa-18-5Vz"/>
+                <constraint firstItem="UtT-Es-viZ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="YPG-WW-Ngh"/>
                 <constraint firstItem="uWH-6y-3yX" firstAttribute="top" secondItem="JG0-7n-vJ3" secondAttribute="bottom" constant="5" id="cW8-gN-qEW"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ddd-4J-dQv" secondAttribute="bottom" id="fKj-qQ-CPD"/>
+                <constraint firstItem="UtT-Es-viZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="u9n-wr-YdO"/>
             </constraints>
-            <point key="canvasLocation" x="-145" y="-21"/>
+            <point key="canvasLocation" x="-146.37681159420291" y="-21.195652173913047"/>
         </view>
     </objects>
     <resources>
