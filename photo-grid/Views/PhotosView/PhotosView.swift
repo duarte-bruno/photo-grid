@@ -10,15 +10,13 @@ import PhotosUI
 
 protocol PhotosViewDelegate: class {
     func didSelect(photo: String)
-    func loadMoreData()
-    func refreshContent()
 }
 
 class PhotosView: UIView {
     
     // MARK: - Attributes
 
-    @IBOutlet weak var collectionViewFlowLayout: UICollectionViewFlowLayout!
+    @IBOutlet private weak var collectionViewFlowLayout: UICollectionViewFlowLayout!
     @IBOutlet private var view: UIView!
     @IBOutlet private weak var collectionView: UICollectionView!
 
@@ -44,15 +42,7 @@ class PhotosView: UIView {
     deinit {
         PHPhotoLibrary.shared().unregisterChangeObserver(self)
     }
-    
-    // MARK: - Actions
 
-    @objc func refreshContent() {
-        if let viewController = delegate {
-            viewController.refreshContent()
-        }
-    }
-    
     // MARK: - Logic
     
     private func setup() {
@@ -90,6 +80,8 @@ class PhotosView: UIView {
     /// Starts the collection from bottom up
     func showCollectionBottom() {
         guard !didShowCollectionBottom else { return }
+        didShowCollectionBottom = true
+
         let contentSize = collectionView.collectionViewLayout.collectionViewContentSize
         if (contentSize.height > collectionView.bounds.size.height) {
             let targetContentOffset = CGPoint(x: 0.0, y: contentSize.height - collectionView.bounds.size.height)

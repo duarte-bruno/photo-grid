@@ -24,9 +24,9 @@ class ListPhotosViewController: UIViewController {
         setup()
     }
 
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        photosView.showCollectionBottom()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        showGrid()
     }
     
     // MARK: - Logic
@@ -38,31 +38,31 @@ class ListPhotosViewController: UIViewController {
         viewModel.requestLibraryAccess()
         view.backgroundColor = Constants.color().black
     }
+
+    private func showGrid() {
+        photosView.showCollectionBottom()
+        if self.photosView.alpha == 0 {
+            UIView.animate(withDuration: 0.1) {
+                self.photosView.alpha = 1.0
+            }
+        }
+    }
 }
 
 extension ListPhotosViewController: ListPhotosViewModelDelegate {
 
     internal func libraryAccessGranted() {
+        // TODO: Remove the denied view
     }
     
     internal func libraryAccessDenied() {
-        let alert = UIAlertController(title: "Denied", message: "Denied", preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
-        present(alert, animated: true, completion: nil)
-    }
-    
-    internal func photosFetched(_ photos: PHFetchResult<PHAsset>) {
+        // TODO: create the denied view
     }
 }
 
 extension ListPhotosViewController: PhotosViewDelegate {
 
     internal func didSelect(photo: String) {
-    }
-    
-    internal func loadMoreData() {
-    }
-    
-    internal func refreshContent() {
+        // TODO: Show the big image detail
     }
 }

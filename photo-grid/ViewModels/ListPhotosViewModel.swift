@@ -10,7 +10,6 @@ import PhotosUI
 protocol ListPhotosViewModelDelegate: class {
     func libraryAccessGranted()
     func libraryAccessDenied()
-    func photosFetched(_ photos: PHFetchResult<PHAsset>)
 }
 
 class ListPhotosViewModel {
@@ -18,7 +17,6 @@ class ListPhotosViewModel {
     // MARK: - Attributes
     
     var delegate: ListPhotosViewModelDelegate? = nil
-    var photos: PHFetchResult<PHAsset>? = nil
     var photoService: PhotoService?
     
     // MARK: - Logic
