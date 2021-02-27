@@ -19,6 +19,7 @@ class ListPhotosViewModel {
     
     var delegate: ListPhotosViewModelDelegate? = nil
     var photos: PHFetchResult<PHAsset>? = nil
+    var photoService: PhotoService?
     
     // MARK: - Logic
     
@@ -30,15 +31,6 @@ class ListPhotosViewModel {
                 } else {
                     self?.delegate?.libraryAccessDenied()
                 }
-            }
-        }
-    }
-    
-    func fetchPhotos() {
-        PhotoService.fetchPhotos { (result) in
-            DispatchQueue.main.async { [weak self] in
-                self?.photos = result
-                self?.delegate?.photosFetched(result)
             }
         }
     }

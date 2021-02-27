@@ -17,8 +17,9 @@
                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image-ref" translatesAutoresizingMaskIntoConstraints="NO" id="VUW-Bt-QtS" customClass="CustomImageView" customModule="photo_grid" customModuleProvider="target">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VUW-Bt-QtS">
                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </imageView>
                 </subviews>
             </view>
@@ -30,12 +31,9 @@
                 <constraint firstItem="VUW-Bt-QtS" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="pz3-Sy-NV2"/>
             </constraints>
             <connections>
-                <outlet property="mainImage" destination="VUW-Bt-QtS" id="66a-Nv-Qxm"/>
+                <outlet property="mainImage" destination="VUW-Bt-QtS" id="HZS-UT-f2v"/>
             </connections>
             <point key="canvasLocation" x="139" y="135"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="image-ref" width="2316" height="3088"/>
-    </resources>
 </document>

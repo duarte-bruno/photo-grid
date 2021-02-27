@@ -23,6 +23,11 @@ class ListPhotosViewController: UIViewController {
         super.viewDidLoad()
         setup()
     }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        photosView.showCollectionBottom()
+    }
     
     // MARK: - Logic
     
@@ -38,7 +43,6 @@ class ListPhotosViewController: UIViewController {
 extension ListPhotosViewController: ListPhotosViewModelDelegate {
 
     internal func libraryAccessGranted() {
-        viewModel.fetchPhotos()
     }
     
     internal func libraryAccessDenied() {
@@ -48,8 +52,6 @@ extension ListPhotosViewController: ListPhotosViewModelDelegate {
     }
     
     internal func photosFetched(_ photos: PHFetchResult<PHAsset>) {
-        photosView.photos = photos
-        photosView.reloadData()
     }
 }
 
@@ -59,7 +61,6 @@ extension ListPhotosViewController: PhotosViewDelegate {
     }
     
     internal func loadMoreData() {
-        //viewModel.fetchPhotos()
     }
     
     internal func refreshContent() {

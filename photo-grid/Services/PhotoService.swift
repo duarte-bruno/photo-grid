@@ -7,8 +7,17 @@
 
 import PhotosUI
 
-class PhotoService {
-    
+class PhotoService: NSObject {
+
+    // MARK: - Attributes
+
+    var fetchResult: PHFetchResult<PHAsset>!
+    private var assetCollection: PHAssetCollection!
+    let imageManager = PHCachingImageManager()
+    private var thumbnailSize: CGSize!
+
+    // MARK: - Logic
+
     /// Request the access to Photo Library
     static func requestLibraryAccess(completion: @escaping (Bool) -> Void) {
         PHPhotoLibrary.requestAuthorization { (status) in
@@ -21,27 +30,39 @@ class PhotoService {
         }
     }
 
-    /// Fetch all photos from Library
-    static func fetchPhotos(completion: (PHFetchResult<PHAsset>) -> Void) {
-        
-        // Sort the images by descending creation date
-        let fetchOptions = PHFetchOptions()
-        fetchOptions.sortDescriptors = [NSSortDescriptor(key:"creationDate", ascending: false)]
-        
-        // Fetch the image assets
-        completion(PHAsset.fetchAssets(with: PHAssetMediaType.image, options: fetchOptions))
+    func fetchAllPhotos() {
+        if fetchResult == nil {
+            let allPhotosOptions = PHFetchOptions()
+            allPhotosOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: true)]
+            fetchResult = PHAsset.fetchAssets(with: allPhotosOptions)
+        }
     }
-    
-    /// Fetch the thumbnail of a specif image
-    static func fetchThumbnail(for phAsset: PHAsset, imageSize: CGSize, completion: @escaping (UIImage?) -> Void) {
-        
-        let requestOptions = PHImageRequestOptions()
-        requestOptions.isSynchronous = false // to fetch only the thumbnail
-        requestOptions.isNetworkAccessAllowed = true
-        requestOptions.deliveryMode = .highQualityFormat
-        
-        PHImageManager.default().requestImage(for: phAsset, targetSize: imageSize, contentMode: PHImageContentMode.aspectFill, options: requestOptions) { (image, _) in
+
+    func setThumbnailSize(cellSize: CGSize) {
+        let scale = UIScreen.main.scale
+        thumbnailSize = CGSize(width: cellSize.width * scale, height: cellSize.height * scale)
+    }
+
+    func requestThumbnail(_ asset: PHAsset, completion: @escaping (UIImage?) -> Void) {
+        imageManager.requestImage(for: asset, targetSize: thumbnailSize, contentMode: .aspectFill, options: nil) { (image, _) in
             completion(image)
         }
+    }
+
+    // MARK: - Cache Logic
+
+    func computeCache(_ addedRects: [CGRect], _ removedRects: [CGRect], _ collectionView: UICollectionView) {
+        let addedAssets = addedRects
+            .flatMap { rect in collectionView.indexPathsForElements(in: rect) }
+            .map { indexPath in fetchResult.object(at: indexPath.item) }
+        let removedAssets = removedRects
+            .flatMap { rect in collectionView.indexPathsForElements(in: rect) }
+            .map { indexPath in fetchResult.object(at: indexPath.item) }
+
+        // Update the assets the PHCachingImageManager is caching.
+        imageManager.startCachingImages(for: addedAssets,
+                                        targetSize: thumbnailSize, contentMode: .aspectFill, options: nil)
+        imageManager.stopCachingImages(for: removedAssets,
+                                       targetSize: thumbnailSize, contentMode: .aspectFill, options: nil)
     }
 }
