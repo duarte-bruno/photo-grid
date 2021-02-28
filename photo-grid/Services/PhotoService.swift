@@ -86,6 +86,17 @@ class PhotoService: NSObject {
         }
     }
 
+    static func addPhotoToLibrary(_ image: UIImage) {
+        PHPhotoLibrary.requestAuthorization { status in
+            guard status == .authorized, let imageData = image.jpegData(compressionQuality: 1.0) else { return }
+
+            PHPhotoLibrary.shared().performChanges({
+                let creationRequest = PHAssetCreationRequest.forAsset()
+                creationRequest.addResource(with: .photo, data: imageData, options: PHAssetResourceCreationOptions())
+            }, completionHandler: nil)
+        }
+    }
+
     // MARK: - Cache Logic
 
     func computeCache(_ addedRects: [CGRect], _ removedRects: [CGRect], _ collectionView: UICollectionView) {

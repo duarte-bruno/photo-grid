@@ -85,6 +85,6 @@ extension ListPhotosViewController: CustomTabBarDelegate {
 extension ListPhotosViewController: CameraServiceDelegate {
 
     internal func didTakePhoto(_ image: UIImage) {
-
+        PhotoService.addPhotoToLibrary(image)
     }
 }
