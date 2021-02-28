@@ -34,7 +34,7 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photogrid-logo-color" translatesAutoresizingMaskIntoConstraints="NO" id="rN2-Wp-fvC">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-icon-color" translatesAutoresizingMaskIntoConstraints="NO" id="rN2-Wp-fvC">
                     <rect key="frame" x="122" y="238" width="131" height="131"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="rN2-Wp-fvC" secondAttribute="height" multiplier="1:1" id="5t0-cJ-Pam"/>
@@ -54,11 +54,11 @@
                 <constraint firstItem="rN2-Wp-fvC" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.35" id="pNJ-C7-qfX"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hal-dl-ij7" secondAttribute="trailing" id="ySo-vR-eBW"/>
             </constraints>
-            <point key="canvasLocation" x="-41" y="-21"/>
+            <point key="canvasLocation" x="-42.399999999999999" y="-21.139430284857571"/>
         </view>
     </objects>
     <resources>
-        <image name="photogrid-logo-color" width="124" height="124"/>
+        <image name="logo-icon-color" width="124" height="124"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

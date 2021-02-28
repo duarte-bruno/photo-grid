@@ -31,13 +31,14 @@ class InitialViewController: UIViewController {
     // MARK: - Logic
     
     private func setup() {
-        madeByLabel.textColor = Constants.color().lightGray
-        nameLabel.textColor = Constants.color().blue
-        view.backgroundColor = Constants.color().black
+        madeByLabel.textColor = Constants.color().darkGray
+        nameLabel.textColor = Constants.color().purple
+        view.backgroundColor = Constants.color().white
+        self.logoImage.alpha = 0.0
     }
     
     private func startAnimation() {
-        UIView.animate(withDuration: 0.7, animations: {
+        UIView.animate(withDuration: 1.0, animations: {
             self.logoImage.alpha = 1.0
         }, completion: { _ in
             UIView.animate(withDuration: 0.7) {
