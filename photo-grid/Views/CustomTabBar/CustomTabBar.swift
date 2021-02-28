@@ -8,15 +8,14 @@
 import UIKit
 
 protocol CustomTabBarDelegate: class {
-    func homeSelected()
-    func photoSelected()
+    func showCamera()
 }
 
 class CustomTabBar: UIView {
     
     // MARK: - Attributes
     
-    @IBOutlet var view: UIView!
+    @IBOutlet private var view: UIView!
     @IBOutlet private weak var backView: UIView!
     @IBOutlet private weak var photoImage: UIImageView!
     
@@ -37,33 +36,20 @@ class CustomTabBar: UIView {
     // MARK: - Actions
     
     @IBAction private func photoButtonTap(_ sender: UIButton) {
-        setSelected(photoImage)
-        delegate?.photoSelected()
+        delegate?.showCamera()
     }
     
     // MARK: - Logic
     
     private func setup() {
-        setupView()
-    }
-    
-    private func setupView() {
         let bundle = Bundle(for: type(of: self))
         bundle.loadNibNamed("CustomTabBar", owner: self, options: nil)
         addSubview(view)
         view.frame = bounds
-        
+
         view.backgroundColor = Constants.color().black
         backView.layer.cornerRadius = 23
-        
-        setupButtons()
-    }
-    
-    private func setupButtons() {
-        setSelected(photoImage)
-    }
-    
-    private func setSelected(_ image: UIImageView) {
-        image.setImageColor(Constants.color().black)
+
+        photoImage.setImageColor(Constants.color().black)
     }
 }

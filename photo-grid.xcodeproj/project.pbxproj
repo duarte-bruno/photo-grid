@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		75085BEC25EAE2F900EC331C /* ShowPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75085BEA25EAE2F900EC331C /* ShowPhotoViewController.swift */; };
 		75085BED25EAE2F900EC331C /* ShowPhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75085BEB25EAE2F900EC331C /* ShowPhotoViewController.xib */; };
+		75085BF625EB094500EC331C /* CameraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75085BF525EB094500EC331C /* CameraService.swift */; };
 		751A296625E935FC004CA006 /* PhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751A296525E935FC004CA006 /* PhotoService.swift */; };
 		751C694525E70BE800E73596 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751C694425E70BE800E73596 /* Constants.swift */; };
 		751C694C25E70C7300E73596 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751C694B25E70C7300E73596 /* UIColorExtension.swift */; };
@@ -51,6 +52,7 @@
 /* Begin PBXFileReference section */
 		75085BEA25EAE2F900EC331C /* ShowPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowPhotoViewController.swift; sourceTree = "<group>"; };
 		75085BEB25EAE2F900EC331C /* ShowPhotoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowPhotoViewController.xib; sourceTree = "<group>"; };
+		75085BF525EB094500EC331C /* CameraService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraService.swift; sourceTree = "<group>"; };
 		751A296525E935FC004CA006 /* PhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoService.swift; sourceTree = "<group>"; };
 		751C694425E70BE800E73596 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		751C694B25E70C7300E73596 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				751A296525E935FC004CA006 /* PhotoService.swift */,
+				75085BF525EB094500EC331C /* CameraService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 				7586A6E325E7D1B4009D7A2D /* CustomTabBar.swift in Sources */,
 				7586A6F525E7F082009D7A2D /* InitialViewController.swift in Sources */,
 				7586A70A25E83C20009D7A2D /* PhotosCollectionViewCell.swift in Sources */,
+				75085BF625EB094500EC331C /* CameraService.swift in Sources */,
 				75085BEC25EAE2F900EC331C /* ShowPhotoViewController.swift in Sources */,
 				75CDB84C25E5CB5E000C114E /* ListPhotosViewModel.swift in Sources */,
 				75CDB80725E5C814000C114E /* AppDelegate.swift in Sources */,

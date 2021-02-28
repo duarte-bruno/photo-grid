@@ -16,6 +16,7 @@ class ListPhotosViewController: UIViewController {
     @IBOutlet private weak var tabBar: CustomTabBar!
     
     private var viewModel = ListPhotosViewModel()
+    private var cameraService: CameraService?
     
     // MARK: - Class lifecycle
     
@@ -33,10 +34,15 @@ class ListPhotosViewController: UIViewController {
     
     private func setup() {
         photosView.delegate = self
-        
+
+        tabBar.delegate = self
+
         viewModel.delegate = self
         viewModel.requestLibraryAccess()
+
         view.backgroundColor = Constants.color().black
+
+        cameraService = CameraService(self)
     }
 
     private func showGrid() {
@@ -62,9 +68,23 @@ extension ListPhotosViewController: ListPhotosViewModelDelegate {
 
 extension ListPhotosViewController: PhotosViewDelegate {
 
-    func showPhotoDetail(phAsset: PHAsset) {
+    internal func showPhotoDetail(phAsset: PHAsset) {
         let viewController = ShowPhotoViewController()
         viewController.phAsset = phAsset
-        self.navigationController?.present(viewController, animated: true, completion: nil)
+        present(viewController, animated: true)
+    }
+}
+
+extension ListPhotosViewController: CustomTabBarDelegate {
+
+    internal func showCamera() {
+        cameraService?.showCamera(self)
+    }
+}
+
+extension ListPhotosViewController: CameraServiceDelegate {
+
+    internal func didTakePhoto(_ image: UIImage) {
+
     }
 }
