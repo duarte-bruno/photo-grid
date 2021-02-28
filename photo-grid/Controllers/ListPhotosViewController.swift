@@ -73,6 +73,10 @@ extension ListPhotosViewController: PhotosViewDelegate {
         viewController.phAsset = phAsset
         present(viewController, animated: true)
     }
+
+    internal func showDeleteAlert(_ alert: UIAlertController) {
+        present(alert, animated: true, completion: nil)
+    }
 }
 
 extension ListPhotosViewController: CustomTabBarDelegate {

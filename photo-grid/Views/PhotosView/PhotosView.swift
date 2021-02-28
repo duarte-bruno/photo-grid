@@ -10,6 +10,7 @@ import PhotosUI
 
 protocol PhotosViewDelegate: class {
     func showPhotoDetail(phAsset: PHAsset)
+    func showDeleteAlert(_ alert: UIAlertController)
 }
 
 class PhotosView: UIView {
@@ -26,6 +27,7 @@ class PhotosView: UIView {
     private let cellIdentifier = "PhotosCollectionViewCell"
     private var previousPreheatRect = CGRect.zero
     private var didShowCollectionBottom = false
+    private var longPressed = false
 
     // MARK: - Class lifecycle
     
@@ -43,8 +45,60 @@ class PhotosView: UIView {
         PHPhotoLibrary.shared().unregisterChangeObserver(self)
     }
 
+    // MARK: - Action
+
+    @IBAction func longPressedCollectionView(_ sender: UILongPressGestureRecognizer) {
+        guard !longPressed else { return }
+        longPressed = true
+
+        UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
+
+        let point = sender.location(in: collectionView)
+        guard let indexPath = collectionView.indexPathForItem(at: point) else { return }
+        let phAsset = photoService.fetchResult.object(at: indexPath.row)
+        let image = (collectionView.cellForItem(at: indexPath) as! PhotosCollectionViewCell).mainImage.image ?? UIImage()
+
+        delegate?.showDeleteAlert(createDeleteAlert(phAsset, image))
+    }
+
     // MARK: - Logic
-    
+
+    private func createDeleteAlert(_ phAsset: PHAsset, _ image: UIImage) -> UIAlertController {
+        let alert = UIAlertController(
+            title: "\n\n\n\n\nAre you sure you want to permanently remove this image?",
+            message: "This action cannot be reversed.",
+            preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "Remove", style: .destructive, handler: { [weak self] (action) -> Void in
+            self?.longPressed = false
+            print("Remove button tapped \(phAsset.localIdentifier)")
+        }))
+
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { [weak self] (action) -> Void in
+            self?.longPressed = false
+            print("Cancel button tapped \(phAsset.localIdentifier)")
+        }))
+
+        let imageView = UIImageView(image: image)
+        imageView.contentMode = .scaleAspectFill
+        alert.view.addSubview(imageView)
+
+        imageView.layer.cornerRadius = 5
+        imageView.clipsToBounds = true
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+
+        let size = collectionViewFlowLayout.itemSize
+        
+        alert.view.addConstraints([
+            imageView.centerXAnchor.constraint(equalTo: alert.view.centerXAnchor),
+            imageView.topAnchor.constraint(equalTo: alert.view.layoutMarginsGuide.topAnchor, constant: 10),
+            imageView.widthAnchor.constraint(equalToConstant: size.width),
+            imageView.heightAnchor.constraint(equalToConstant: size.width)
+        ])
+
+        return alert
+    }
+
     private func setup() {
         setupView()
 
