@@ -97,6 +97,18 @@ class PhotoService: NSObject {
         }
     }
 
+    static func deleteAssetFromLibrary(_ phAsset: PHAsset, completion: @escaping () -> Void) {
+        PHPhotoLibrary.requestAuthorization { status in
+            guard status == .authorized else { return }
+
+            PHPhotoLibrary.shared().performChanges({
+                PHAssetChangeRequest.deleteAssets([phAsset] as NSArray)
+            }) { (_, _) in
+                completion()
+            }
+        }
+    }
+
     // MARK: - Cache Logic
 
     func computeCache(_ addedRects: [CGRect], _ removedRects: [CGRect], _ collectionView: UICollectionView) {
