@@ -15,7 +15,7 @@ class PhotoService: NSObject {
 
     // MARK: - Attributes
 
-    var fetchResult: PHFetchResult<PHAsset>!
+    var fetchResult: PHFetchResult<PHAsset> = PHFetchResult()
     private var assetCollection: PHAssetCollection!
     let imageManager = PHCachingImageManager()
     private var imageSize: CGSize!
@@ -56,7 +56,7 @@ class PhotoService: NSObject {
     }
 
     func fetchAllPhotos() {
-        if fetchResult == nil {
+        if fetchResult.count == 0 {
             let allPhotosOptions = PHFetchOptions()
             allPhotosOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: true)]
             fetchResult = PHAsset.fetchAssets(with: allPhotosOptions)
@@ -112,6 +112,8 @@ class PhotoService: NSObject {
     // MARK: - Cache Logic
 
     func computeCache(_ addedRects: [CGRect], _ removedRects: [CGRect], _ collectionView: UICollectionView) {
+        guard fetchResult.count > 0 else { return }
+
         let addedAssets = addedRects
             .flatMap { rect in collectionView.indexPathsForElements(in: rect) }
             .map { indexPath in fetchResult.object(at: indexPath.item) }

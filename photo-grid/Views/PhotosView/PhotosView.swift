@@ -67,15 +67,16 @@ class PhotosView: UIView {
 
     private func setup() {
         setupView()
+        setupCollectionView()
+        photoService.setImageSize(containerSize: collectionViewFlowLayout.itemSize)
+    }
 
+    func start() {
         resetCachedAssets()
         photoService.fetchAllPhotos()
         PHPhotoLibrary.shared().register(self)
-
-        setupCollectionView()
-        photoService.setImageSize(containerSize: collectionViewFlowLayout.itemSize)
-
         updateCachedAssets()
+        collectionView.reloadData()
     }
 
     private func setupView() {

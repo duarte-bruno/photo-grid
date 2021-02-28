@@ -18,11 +18,15 @@ class FooterCollectionReusableView: UICollectionReusableView {
     func setup(photosCount: Int) {
         label.textColor = Constants.color().lightGray
 
-        let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = .decimal
+        if photosCount == 0 {
+            label.text = "No photos found"
+        } else {
+            let numberFormatter = NumberFormatter()
+            numberFormatter.numberStyle = .decimal
 
-        guard let formattedNumber = numberFormatter.string(from: NSNumber(value: photosCount)) else { return }
+            guard let formattedNumber = numberFormatter.string(from: NSNumber(value: photosCount)) else { return }
 
-        label.text = "\(formattedNumber) Photos"
+            label.text = "\(formattedNumber) Photos"
+        }
     }
 }

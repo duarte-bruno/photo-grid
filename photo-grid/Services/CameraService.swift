@@ -32,12 +32,19 @@ class CameraService: NSObject {
     // MARK: - Logic
 
     private func setup() {
-        imagePicker.sourceType = .camera
-        imagePicker.allowsEditing = false
-        imagePicker.delegate = self
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            imagePicker.sourceType = .camera
+            imagePicker.allowsEditing = false
+            imagePicker.delegate = self
+        }
     }
 
     func showCamera(_ sender: UIViewController) {
+        if !UIImagePickerController.isSourceTypeAvailable(.camera) {
+            alertCameraNeeded(sender)
+            return
+        }
+
         // Check camera authorization status
         switch AVCaptureDevice.authorizationStatus(for: .video) {
         case .authorized:
@@ -72,7 +79,7 @@ class CameraService: NSObject {
     private func alertCameraAccessNeeded(_ sender: UIViewController) {
         guard let settingsAppURL = URL(string: UIApplication.openSettingsURLString) else { return }
         let alert = UIAlertController(
-            title: "Need Camera Access",
+            title: "Camera access needed",
             message: "Camera access is required to make full use of this app.",
             preferredStyle: UIAlertController.Style.alert
         )
@@ -82,6 +89,17 @@ class CameraService: NSObject {
             UIApplication.shared.open(settingsAppURL, options: [:], completionHandler: nil)
         }))
 
+        sender.present(alert, animated: true, completion: nil)
+    }
+
+    private func alertCameraNeeded(_ sender: UIViewController) {
+        let alert = UIAlertController(
+            title: "Camera Needed",
+            message: "Your device needs a camera to use this feature.",
+            preferredStyle: UIAlertController.Style.alert
+        )
+
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         sender.present(alert, animated: true, completion: nil)
     }
 }

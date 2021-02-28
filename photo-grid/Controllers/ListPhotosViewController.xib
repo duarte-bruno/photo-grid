@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ListPhotosViewController" customModule="photo_grid" customModuleProvider="target">
             <connections>
+                <outlet property="accessAlertButton" destination="atm-Am-f8a" id="BMt-tC-vX1"/>
+                <outlet property="accessAlertView" destination="oW6-sc-Omd" id="DMi-6S-DtO"/>
                 <outlet property="photosView" destination="4Py-ng-uO8" id="is4-9d-fXq"/>
                 <outlet property="tabBar" destination="eeK-v8-hcG" id="eAu-Qu-saj"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -24,6 +26,49 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="597"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
+                <view hidden="YES" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oW6-sc-Omd">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="597"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photo library access needed" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dOy-ad-1bh">
+                            <rect key="frame" x="75" y="217" width="225" height="41"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photo library access is required to make full use of this app." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eBq-gR-4aE">
+                            <rect key="frame" x="75" y="268" width="225" height="61"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="atm-Am-f8a">
+                            <rect key="frame" x="75" y="344" width="225" height="40"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="RSV-OS-dc1"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <state key="normal" title="Allow access">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="accessAlertButtonAction:" destination="-1" eventType="touchUpInside" id="F4q-Ah-6uf"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="dOy-ad-1bh" firstAttribute="width" secondItem="oW6-sc-Omd" secondAttribute="width" multiplier="0.6" id="4Ft-oJ-qN0"/>
+                        <constraint firstItem="eBq-gR-4aE" firstAttribute="width" secondItem="oW6-sc-Omd" secondAttribute="width" multiplier="0.6" id="9Rd-RP-mAJ"/>
+                        <constraint firstItem="eBq-gR-4aE" firstAttribute="top" secondItem="dOy-ad-1bh" secondAttribute="bottom" constant="10" id="DER-NW-sNV"/>
+                        <constraint firstItem="eBq-gR-4aE" firstAttribute="centerY" secondItem="oW6-sc-Omd" secondAttribute="centerY" id="OKJ-lz-Ckm"/>
+                        <constraint firstItem="eBq-gR-4aE" firstAttribute="centerX" secondItem="oW6-sc-Omd" secondAttribute="centerX" id="ZH8-MC-JOK"/>
+                        <constraint firstItem="atm-Am-f8a" firstAttribute="centerX" secondItem="eBq-gR-4aE" secondAttribute="centerX" id="fKs-vK-plk"/>
+                        <constraint firstItem="dOy-ad-1bh" firstAttribute="centerX" secondItem="eBq-gR-4aE" secondAttribute="centerX" id="fx1-uC-qao"/>
+                        <constraint firstItem="atm-Am-f8a" firstAttribute="width" secondItem="oW6-sc-Omd" secondAttribute="width" multiplier="0.6" id="rhv-2t-1ia"/>
+                        <constraint firstItem="atm-Am-f8a" firstAttribute="top" secondItem="eBq-gR-4aE" secondAttribute="bottom" constant="15" id="wCa-bM-kds"/>
+                    </constraints>
+                </view>
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eeK-v8-hcG" customClass="CustomTabBar" customModule="photo_grid" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="597" width="375" height="70"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -35,11 +80,15 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="oW6-sc-Omd" secondAttribute="trailing" id="04h-zp-kJd"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4Py-ng-uO8" secondAttribute="trailing" id="1qT-YV-OzG"/>
                 <constraint firstItem="4Py-ng-uO8" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="eYx-f3-hdZ"/>
                 <constraint firstItem="4Py-ng-uO8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="fQe-gE-0nk"/>
+                <constraint firstItem="oW6-sc-Omd" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="h5c-Qv-ATl"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="eeK-v8-hcG" secondAttribute="bottom" id="m2B-Ei-pNB"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="eeK-v8-hcG" secondAttribute="trailing" id="oQG-UX-i5r"/>
+                <constraint firstItem="eeK-v8-hcG" firstAttribute="top" secondItem="oW6-sc-Omd" secondAttribute="bottom" id="p9K-sH-wr0"/>
+                <constraint firstItem="oW6-sc-Omd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="sQB-mx-lGB"/>
                 <constraint firstItem="eeK-v8-hcG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="x6U-fV-N4n"/>
                 <constraint firstItem="eeK-v8-hcG" firstAttribute="top" secondItem="4Py-ng-uO8" secondAttribute="bottom" id="zhQ-Qe-oRp"/>
             </constraints>
