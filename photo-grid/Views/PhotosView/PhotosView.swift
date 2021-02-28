@@ -24,9 +24,11 @@ class PhotosView: UIView {
 
     private let photoService = PhotoService()
     private let cellIdentifier = "PhotosCollectionViewCell"
+    private let footerIdentifier = "FooterCollectionReusableView"
     private var previousPreheatRect = CGRect.zero
     private var didShowCollectionBottom = false
     private var longPressed = false
+    private var footerView: FooterCollectionReusableView?
 
     // MARK: - Class lifecycle
     
@@ -85,14 +87,22 @@ class PhotosView: UIView {
     }
 
     private func setupCollectionView() {
-        let nib = UINib(nibName: cellIdentifier, bundle: nil)
-        collectionView.register(nib, forCellWithReuseIdentifier: cellIdentifier)
+        collectionView.register(
+            UINib(nibName: cellIdentifier, bundle: nil),
+            forCellWithReuseIdentifier: cellIdentifier)
+
+        collectionView.register(
+            UINib(nibName: footerIdentifier, bundle: nil),
+            forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter,
+            withReuseIdentifier: footerIdentifier)
 
         let itemSize = (view.bounds.inset(by: view.safeAreaInsets).width - 30) / 3
         collectionViewFlowLayout.itemSize = CGSize(width: itemSize, height: itemSize)
         collectionViewFlowLayout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 20, right: 10)
         collectionViewFlowLayout.minimumInteritemSpacing = 5
         collectionViewFlowLayout.minimumLineSpacing = 5
+
+        collectionViewFlowLayout.footerReferenceSize = CGSize(width: view.bounds.inset(by: view.safeAreaInsets).width - 20, height: 30)
     }
     
     /// Starts the collection from bottom up
@@ -170,7 +180,14 @@ extension UICollectionView {
 extension PhotosView: UICollectionViewDelegate, UICollectionViewDataSource {
     
     internal func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        DispatchQueue.main.async { [weak self] in
+            self?.footerView?.setup(photosCount: self?.photoService.fetchResult.count ?? 0)
+        }
         return photoService.fetchResult.count
+    }
+
+    internal func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
     }
 
     internal func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -187,6 +204,15 @@ extension PhotosView: UICollectionViewDelegate, UICollectionViewDataSource {
             }
         }
         return cell
+    }
+
+    internal func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        footerView = collectionView.dequeueReusableSupplementaryView(
+            ofKind: kind, withReuseIdentifier: footerIdentifier, for: indexPath) as? FooterCollectionReusableView
+
+        footerView?.setup(photosCount: photoService.fetchResult.count)
+
+        return footerView!
     }
 
     internal func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
