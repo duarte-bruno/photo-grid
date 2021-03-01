@@ -41,4 +41,30 @@ Ao abrir o código da aplicação você encontrará a estrutra de pastas abaixo:
 ## Funcionalidades
 
 ### 1. Launch Screen
+
 ![](https://github.com/duarte-bruno/photo-grid/blob/master/Prints/launch-screen.PNG)
+
+### 2. Home
+
+![](https://github.com/duarte-bruno/photo-grid/blob/master/Prints/home-bottom.PNG)
+![](https://github.com/duarte-bruno/photo-grid/blob/master/Prints/home-top.PNG)
+
+### 3. Photo detail and zoom
+
+![](https://github.com/duarte-bruno/photo-grid/blob/master/Prints/photo-detail.PNG)
+![](https://github.com/duarte-bruno/photo-grid/blob/master/Prints/photo-detail-zoom.PNG)
+
+### 4. Take photos
+
+![](https://github.com/duarte-bruno/photo-grid/blob/master/Prints/camera.PNG)
+![](https://github.com/duarte-bruno/photo-grid/blob/master/Prints/home-after-camera.PNG)
+
+### 5. Delete photo
+
+![](https://github.com/duarte-bruno/photo-grid/blob/master/Prints/delete-alert.PNG)
+
+### 6. Photo library permission handle
+
+![](https://github.com/duarte-bruno/photo-grid/blob/master/Prints/limited-access.PNG)
+![](https://github.com/duarte-bruno/photo-grid/blob/master/Prints/no-photos.jpg)
+![](https://github.com/duarte-bruno/photo-grid/blob/master/Prints/home-request-access.PNG)
