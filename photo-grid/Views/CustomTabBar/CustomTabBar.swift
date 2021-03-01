@@ -16,8 +16,6 @@ class CustomTabBar: UIView {
     // MARK: - Attributes
     
     @IBOutlet private var view: UIView!
-    @IBOutlet private weak var backView: UIView!
-    @IBOutlet private weak var photoImage: UIImageView!
     
     weak var delegate: CustomTabBarDelegate?
     
@@ -46,10 +44,5 @@ class CustomTabBar: UIView {
         bundle.loadNibNamed("CustomTabBar", owner: self, options: nil)
         addSubview(view)
         view.frame = bounds
-
-        view.backgroundColor = Constants.color().black
-        backView.layer.cornerRadius = 23
-
-        photoImage.setImageColor(Constants.color().black)
     }
 }

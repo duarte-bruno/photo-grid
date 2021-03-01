@@ -10,28 +10,34 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomTabBar" customModule="photo_grid" customModuleProvider="target">
             <connections>
-                <outlet property="backView" destination="6zV-iS-SKK" id="xgc-tN-814"/>
-                <outlet property="photoImage" destination="VlD-Uu-sQa" id="QBo-QH-5nW"/>
                 <outlet property="view" destination="iN0-l3-epB" id="yMh-Pj-V12"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clipsSubviews="YES" contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="328" height="70"/>
+            <rect key="frame" x="0.0" y="0.0" width="170" height="100"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bZr-bV-gP9">
-                    <rect key="frame" x="263" y="5" width="60" height="60"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="button-photo-bg" translatesAutoresizingMaskIntoConstraints="NO" id="M9g-Nz-4Sc">
+                    <rect key="frame" x="0.0" y="0.0" width="170" height="48"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="GGC-tz-NCa"/>
+                    </constraints>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lR4-Fc-OJh">
+                    <rect key="frame" x="0.0" y="48" width="170" height="52"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Dw-Fv-d4C" userLabel="Button View">
+                    <rect key="frame" x="52" y="10" width="66" height="66"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6zV-iS-SKK">
-                            <rect key="frame" x="7" y="7" width="46" height="46"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </view>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-photo" translatesAutoresizingMaskIntoConstraints="NO" id="VlD-Uu-sQa">
-                            <rect key="frame" x="10" y="18" width="40" height="24"/>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="button-photo" translatesAutoresizingMaskIntoConstraints="NO" id="6pf-Q0-pgg">
+                            <rect key="frame" x="0.0" y="0.0" width="66" height="66"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nDB-Sf-I2z">
-                            <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                            <rect key="frame" x="0.0" y="0.0" width="66" height="66"/>
                             <connections>
                                 <action selector="photoButtonTap:" destination="-1" eventType="touchUpInside" id="XxX-Lu-a8A"/>
                             </connections>
@@ -39,44 +45,38 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="VlD-Uu-sQa" firstAttribute="leading" secondItem="bZr-bV-gP9" secondAttribute="leading" constant="10" id="0Oa-5P-ex7"/>
-                        <constraint firstAttribute="bottom" secondItem="VlD-Uu-sQa" secondAttribute="bottom" constant="18" id="BTr-Xy-iII"/>
-                        <constraint firstAttribute="bottom" secondItem="6zV-iS-SKK" secondAttribute="bottom" constant="7" id="J3g-ZN-pIT"/>
-                        <constraint firstItem="6zV-iS-SKK" firstAttribute="top" secondItem="bZr-bV-gP9" secondAttribute="top" constant="7" id="J5e-vD-fcC"/>
-                        <constraint firstAttribute="trailing" secondItem="nDB-Sf-I2z" secondAttribute="trailing" id="KlG-Qp-t8a"/>
-                        <constraint firstItem="nDB-Sf-I2z" firstAttribute="top" secondItem="bZr-bV-gP9" secondAttribute="top" id="LE2-WA-VEo"/>
-                        <constraint firstAttribute="trailing" secondItem="VlD-Uu-sQa" secondAttribute="trailing" constant="10" id="MCj-pU-wn7"/>
-                        <constraint firstAttribute="width" secondItem="bZr-bV-gP9" secondAttribute="height" multiplier="1:1" id="Nje-Ck-Fa1"/>
-                        <constraint firstItem="nDB-Sf-I2z" firstAttribute="leading" secondItem="bZr-bV-gP9" secondAttribute="leading" id="SHU-mb-rdw"/>
-                        <constraint firstItem="VlD-Uu-sQa" firstAttribute="top" secondItem="bZr-bV-gP9" secondAttribute="top" constant="18" id="VTx-oY-kzY"/>
-                        <constraint firstItem="6zV-iS-SKK" firstAttribute="leading" secondItem="bZr-bV-gP9" secondAttribute="leading" constant="7" id="gRh-DD-3tz"/>
-                        <constraint firstAttribute="bottom" secondItem="nDB-Sf-I2z" secondAttribute="bottom" id="sls-Cz-bw1"/>
-                        <constraint firstAttribute="trailing" secondItem="6zV-iS-SKK" secondAttribute="trailing" constant="7" id="vxy-Wk-b5P"/>
+                        <constraint firstAttribute="trailing" secondItem="nDB-Sf-I2z" secondAttribute="trailing" id="3Kg-cw-Akv"/>
+                        <constraint firstAttribute="width" constant="66" id="51q-aa-Uha"/>
+                        <constraint firstAttribute="trailing" secondItem="6pf-Q0-pgg" secondAttribute="trailing" id="Azh-vW-wpS"/>
+                        <constraint firstAttribute="bottom" secondItem="nDB-Sf-I2z" secondAttribute="bottom" id="DRF-Uk-HAg"/>
+                        <constraint firstItem="nDB-Sf-I2z" firstAttribute="top" secondItem="6Dw-Fv-d4C" secondAttribute="top" id="Hw0-yG-3P3"/>
+                        <constraint firstAttribute="height" constant="66" id="KoT-hZ-hMv"/>
+                        <constraint firstAttribute="bottom" secondItem="6pf-Q0-pgg" secondAttribute="bottom" id="mSz-mk-ghV"/>
+                        <constraint firstItem="6pf-Q0-pgg" firstAttribute="top" secondItem="6Dw-Fv-d4C" secondAttribute="top" id="vjH-an-m9y"/>
+                        <constraint firstItem="nDB-Sf-I2z" firstAttribute="leading" secondItem="6Dw-Fv-d4C" secondAttribute="leading" id="xsf-Mu-tod"/>
+                        <constraint firstItem="6pf-Q0-pgg" firstAttribute="leading" secondItem="6Dw-Fv-d4C" secondAttribute="leading" id="y75-ol-DyD"/>
                     </constraints>
                 </view>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photogrid-logo-text" translatesAutoresizingMaskIntoConstraints="NO" id="Ql2-Aa-11Q">
-                    <rect key="frame" x="10" y="22.5" width="130" height="25"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="25" id="AZG-Uw-PyC"/>
-                        <constraint firstAttribute="width" constant="130" id="viF-AV-uv1"/>
-                    </constraints>
-                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="Ql2-Aa-11Q" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Bu6-A5-QKJ"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="bZr-bV-gP9" secondAttribute="bottom" constant="5" id="GXe-1r-L3f"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="bZr-bV-gP9" secondAttribute="trailing" constant="5" id="hIW-xr-ERe"/>
-                <constraint firstItem="bZr-bV-gP9" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="5" id="iHG-is-bb1"/>
-                <constraint firstItem="Ql2-Aa-11Q" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="ov1-bq-RbU"/>
+                <constraint firstItem="lR4-Fc-OJh" firstAttribute="top" secondItem="M9g-Nz-4Sc" secondAttribute="bottom" id="0rl-JY-LZE"/>
+                <constraint firstItem="6Dw-Fv-d4C" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="4R8-SC-pln"/>
+                <constraint firstItem="lR4-Fc-OJh" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="7sP-dc-Feq"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="lR4-Fc-OJh" secondAttribute="trailing" id="Ff5-QU-fA0"/>
+                <constraint firstItem="M9g-Nz-4Sc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="HAn-ob-VUh"/>
+                <constraint firstItem="6Dw-Fv-d4C" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="M0N-N6-NF1"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="M9g-Nz-4Sc" secondAttribute="trailing" id="a6d-Wk-Vd6"/>
+                <constraint firstAttribute="bottom" secondItem="lR4-Fc-OJh" secondAttribute="bottom" id="c1n-d1-h8z"/>
+                <constraint firstItem="M9g-Nz-4Sc" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="dWd-0n-DaK"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="-12.800000000000001" y="-219.49025487256372"/>
         </view>
     </objects>
     <resources>
-        <image name="icon-photo" width="29" height="29"/>
-        <image name="photogrid-logo-text" width="149" height="29"/>
+        <image name="button-photo" width="154" height="154"/>
+        <image name="button-photo-bg" width="404" height="117"/>
     </resources>
 </document>

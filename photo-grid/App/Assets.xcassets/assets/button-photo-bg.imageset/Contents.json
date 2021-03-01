@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "button-photo-bg.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

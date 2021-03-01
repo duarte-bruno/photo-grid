@@ -20,6 +20,8 @@ class ListPhotosViewController: UIViewController {
 
     @IBOutlet weak var accessAlertView: UIView!
     @IBOutlet weak var accessAlertButton: UIButton!
+    @IBOutlet weak var accessAlertTitleLabel: UILabel!
+    @IBOutlet weak var accessAlertTextLabel: UILabel!
 
     // MARK: - Class lifecycle
     
@@ -30,7 +32,6 @@ class ListPhotosViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        viewModel.requestLibraryAccess()
     }
 
     // MARK: - Action
@@ -45,26 +46,29 @@ class ListPhotosViewController: UIViewController {
     private func setup() {
         setupView()
         setupAccessAlertView()
+        viewModel.requestLibraryAccess()
     }
 
     private func setupView() {
         photosView.delegate = self
         tabBar.delegate = self
         viewModel.delegate = self
-        view.backgroundColor = Constants.color().black
+        view.backgroundColor = Constants.color().lightGray
         cameraService = CameraService(self)
     }
 
     private func setupAccessAlertView() {
-        accessAlertButton.setTitleColor(Constants.color().blue, for: .normal)
+        accessAlertTitleLabel.textColor = Constants.color().darkGray
+        accessAlertTextLabel.textColor = Constants.color().darkGray
+        accessAlertButton.setTitleColor(Constants.color().purple, for: .normal)
         accessAlertButton.layer.borderWidth = 1
-        accessAlertButton.layer.borderColor = Constants.color().blue.cgColor
+        accessAlertButton.layer.borderColor = Constants.color().purple.cgColor
         accessAlertButton.layer.cornerRadius = 5
     }
 
     private func showGrid() {
-        photosView.showCollectionBottom()
         if self.photosView.alpha == 0 {
+            photosView.showCollectionBottom()
             UIView.animate(withDuration: 0.1) {
                 self.photosView.alpha = 1.0
             }

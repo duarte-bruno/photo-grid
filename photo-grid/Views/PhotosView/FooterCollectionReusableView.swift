@@ -16,7 +16,7 @@ class FooterCollectionReusableView: UICollectionReusableView {
     // MARK: - Logic
 
     func setup(photosCount: Int) {
-        label.textColor = Constants.color().lightGray
+        label.textColor = Constants.color().darkGray
 
         if photosCount == 0 {
             label.text = "No photos found"

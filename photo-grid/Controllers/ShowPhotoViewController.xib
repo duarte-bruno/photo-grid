@@ -57,10 +57,10 @@
                     <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </progressView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uWH-6y-3yX">
-                    <rect key="frame" x="145" y="6.666666666666667" width="124" height="2.0000000000000009"/>
+                    <rect key="frame" x="145" y="6.6666666666666679" width="124" height="4"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="2" id="bMO-AF-HTg"/>
+                        <constraint firstAttribute="height" constant="4" id="bMO-AF-HTg"/>
                     </constraints>
                 </view>
             </subviews>

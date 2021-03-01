@@ -38,12 +38,14 @@ class ShowPhotoViewController: UIViewController {
     // MARK: - Logic
 
     private func setup() {
-        view.backgroundColor = Constants.color().darkGray
+        view.backgroundColor = Constants.color().lightGray
 
-        pullBarView.backgroundColor = Constants.color().lightGray
-        pullBarView.layer.cornerRadius = 1
+        pullBarView.backgroundColor = Constants.color().purple
+        pullBarView.layer.cornerRadius = 2
 
-        activityIndicator.color = Constants.color().blue
+        barProgressView.tintColor = Constants.color().blue
+
+        activityIndicator.color = Constants.color().purple
 
         photoService = PhotoService(self)
         photoService?.setImageSize(containerSize: mainImageView.bounds.size)

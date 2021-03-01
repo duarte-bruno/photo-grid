@@ -67,14 +67,14 @@ class PhotosView: UIView {
 
     private func setup() {
         setupView()
-        setupCollectionView()
+        PHPhotoLibrary.shared().register(self)
         photoService.setImageSize(containerSize: collectionViewFlowLayout.itemSize)
+        resetCachedAssets()
     }
 
     func start() {
-        resetCachedAssets()
+        setupCollectionView()
         photoService.fetchAllPhotos()
-        PHPhotoLibrary.shared().register(self)
         updateCachedAssets()
         collectionView.reloadData()
     }
@@ -99,11 +99,11 @@ class PhotosView: UIView {
 
         let itemSize = (view.bounds.inset(by: view.safeAreaInsets).width - 30) / 3
         collectionViewFlowLayout.itemSize = CGSize(width: itemSize, height: itemSize)
-        collectionViewFlowLayout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 20, right: 10)
+        collectionViewFlowLayout.sectionInset = UIEdgeInsets(top: 50, left: 10, bottom: 0, right: 10)
         collectionViewFlowLayout.minimumInteritemSpacing = 5
         collectionViewFlowLayout.minimumLineSpacing = 5
 
-        collectionViewFlowLayout.footerReferenceSize = CGSize(width: view.bounds.inset(by: view.safeAreaInsets).width - 20, height: 30)
+        collectionViewFlowLayout.footerReferenceSize = CGSize(width: view.bounds.inset(by: view.safeAreaInsets).width - 20, height: 95)
     }
     
     /// Starts the collection from bottom up
