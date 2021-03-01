@@ -69,7 +69,7 @@ class ListPhotosViewController: UIViewController {
     private func showGrid() {
         if self.photosView.alpha == 0 {
             photosView.showCollectionBottom()
-            UIView.animate(withDuration: 0.1) {
+            UIView.animate(withDuration: 0.4) {
                 self.photosView.alpha = 1.0
             }
         }
