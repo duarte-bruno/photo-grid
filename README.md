@@ -1,13 +1,13 @@
 # Photogrid
 
-Photogrid é um aplicativo iOS que permite que seus usuários visualize suas fotos e tire quantas fotos desejar. Ele foi criado com o objetivo de exemplificar o uso da bibioteca [PhotoKit](https://developer.apple.com/documentation/photokit) da Apple.
+Photogrid is an iOS application that allows its users to view their photos and take as many photos as they want. It was created to exemplify the use of Apple's [PhotoKit](https://developer.apple.com/documentation/photokit) library.
 
-## Sumário
+## Summary
 <!--ts-->
-  * [Autor](#autor)
-  * [Arquitetura](#arquitetura)
-  * [Como rodar o aplicativo](#como-rodar-o-aplicativo)
-  * [Funcionalidades](#funcionalidades)
+  * [Author](#author)
+  * [Architecture](#architecture)
+  * [How to run the application](#how-to-run-the-application)
+  * [Features](#features)
     * [1. Launch Screen](#1-launch-screen) 
     * [2. Home](#2-home)
     * [3. Photo detail and zoom](#3-photo-detail-and-zoom)
@@ -16,40 +16,40 @@ Photogrid é um aplicativo iOS que permite que seus usuários visualize suas fot
     * [6. Photo library permission handle](#6-photo-library-permission-handle)
  <!--te-->
 
-## Autor
+## Author
 
 #### Bruno Duarte Pereira Santos
 [LinkedIn](https://www.linkedin.com/in/brunopereiras/) - [Github](https://github.com/duarte-bruno)
 
 I've been working on the iOS platform for 6+ years now using Swift and Objective-C, but I also have 7+ years developing web applications and APIs using Ruby on Rails, Angular, and NodeJs. I have worked on applications of every size, from startups to international brands. I also have a lot of experience working with layouts and components since I started my professional career as a designer. 
 
-## Arquitetura
+## Architecture
 
-A aplicação foi desenvolvida usando a [Arquitetura MVVM](https://www.raywenderlich.com/34-design-patterns-by-tutorials-mvvm), para ter uma clara separação de responsabilidades e tornar o aplicativo mais fácil para realizar futuras manutenções.
+The application was developed using [MVVM Architecture](https://www.raywenderlich.com/34-design-patterns-by-tutorials-mvvm), to have a clear separation of responsibilities and make the application easier to carry out future maintenance.
 
-Ao abrir o código da aplicação você encontrará a estrutra de pastas abaixo:
+Opening the application code you will find the folder structure below:
 
 ```
-- App -> Arquivos de configuração do projeto
-- Services -> Classes responsáveis bibliotecas e serviços externos
-- Controllers -> Controladoras das telas da aplicação (Views do MVVM)
-- ViewModels -> Classes com as regras de negócio de cada tela (View models do MVVM)
-- Views -> Componentes customizados para a aplicação
+- App -> Project configuration files
+- Services -> Classes responsible for libraries and external services
+- Controllers -> Application screen controllers (MVVM Views)
+- ViewModels -> Classes with the business rules of each screen (View models from MVVM)
+- Views -> Custom components for the application
 
-(Atualmente o app não possui Models customizadas da aplicação, por isso a pasta Models do MVVM não existe nesta aplicação)
+(Currently, the app does not have custom application models, so the MVVM Models folder does not exist in this application.)
 ```
 
-## Como rodar o aplicativo
+## How to run the application
 
-1. Antes de começar você vai precisar ter instalado em sua máquina as seguintes ferramentas:
+1. Before you begin you will need to have the following tools installed on your machine:
 - [Git](https://github.com/git-guides/install-git)
 - [Xcode](https://developer.apple.com/xcode/)
 
-2. Após ter instalado as ferramentas clone ou baixe [este repositório](https://github.com/duarte-bruno/photo-grid) em seu computador.
+2. After installing the clone tools or download [this repository](https://github.com/duarte-bruno/photo-grid) on your computer.
 
-3. abra o arquivo photo-grid.xcodeproj com o XCode e clique em rodar.
+3. Open the photo-grid.xcodeproj file with XCode and click run.
 
-## Funcionalidades
+## Features
 
 ### 1. Launch Screen
 
