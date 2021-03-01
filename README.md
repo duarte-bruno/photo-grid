@@ -3,7 +3,18 @@
 Photogrid é um aplicativo iOS que permite que seus usuários visualize suas fotos e tire quantas fotos desejar. Ele foi criado com o objetivo de exemplificar o uso da bibioteca [PhotoKit](https://developer.apple.com/documentation/photokit) da Apple.
 
 ## Sumário
-
+<!--ts-->
+  * [Autor](#autor)
+  * [Arquitetura](#arquitetura)
+  * [Como rodar o aplicativo](#como-rodar-o-aplicativo)
+  * [Funcionalidades](#funcionalidades)
+    * [1. Launch Screen](#1-launch-screen) 
+    * [2. Home](#2-home)
+    * [3. Photo detail and zoom](#3-photo-detail-and-zoom)
+    * [4. Take photos](#4-take-photos)
+    * [5. Delete photo](#5-delete-photo)
+    * [6. Photo library permission handle](#6-photo-library-permission-handle)
+ <!--te-->
 
 ## Autor
 
