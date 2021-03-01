@@ -17,6 +17,6 @@ struct Constants {
         let black = UIColor(rgb: 0x000000)
         let white = UIColor(rgb: 0xffffff)
         let darkGray = UIColor(rgb: 0x3A3A3C)
-        let lightGray = UIColor(rgb: 0x8E8E93)
+        let lightGray = UIColor(rgb: 0xF2F2F2)
     }
 }

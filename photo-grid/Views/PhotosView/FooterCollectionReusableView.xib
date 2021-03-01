@@ -15,7 +15,7 @@
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vzb-vW-LAj">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                    <rect key="frame" x="0.0" y="10" width="320" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -23,9 +23,8 @@
             </subviews>
             <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
             <constraints>
-                <constraint firstItem="VXr-Tz-HHm" firstAttribute="bottom" secondItem="Vzb-vW-LAj" secondAttribute="bottom" id="4S1-cH-ecD"/>
                 <constraint firstItem="Vzb-vW-LAj" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="9Ix-Ad-cmQ"/>
-                <constraint firstItem="Vzb-vW-LAj" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="Nlv-Vp-EQp"/>
+                <constraint firstItem="Vzb-vW-LAj" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" constant="10" id="Nlv-Vp-EQp"/>
                 <constraint firstAttribute="trailing" secondItem="Vzb-vW-LAj" secondAttribute="trailing" id="qwg-bp-2C2"/>
             </constraints>
             <connections>
