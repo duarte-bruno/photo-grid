@@ -39,7 +39,7 @@ Opening the application code you will find the folder structure below:
 - ViewModels -> Classes with the business rules of each screen (View models from MVVM)
 - Views -> Custom components for the application
 
-(Currently, the app does not have custom application models, so the MVVM Models folder does not exist in this application.)
+📝 Currently, the app does not have custom application models, so the MVVM Models folder does not exist in this application.
 ```
 
 ## How to run the application
