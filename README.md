@@ -35,8 +35,10 @@ Ao abrir o código da aplicação você encontrará a estrutra de pastas abaixo:
 - [Xcode](https://developer.apple.com/xcode/)
 
 2. Após ter instalado as ferramentas clone ou baixe [este repositório](https://github.com/duarte-bruno/photo-grid) em seu computador.
+
 3. abra o arquivo photo-grid.xcodeproj com o XCode e clique em rodar.
 
 ## Funcionalidades
 
-
+### 1. Launch Screen
+![](https://github.com/duarte-bruno/photo-grid/blob/master/Prints/launch-screen.PNG)
