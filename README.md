@@ -19,9 +19,11 @@ Photogrid is an iOS application that allows its users to view their photos and t
 ## Author
 
 #### Bruno Duarte Pereira Santos
-[LinkedIn](https://www.linkedin.com/in/brunopereiras/) - [Github](https://github.com/duarte-bruno)
 
-I've been working on the iOS platform for 6+ years now using Swift and Objective-C, but I also have 7+ years developing web applications and APIs using Ruby on Rails, Angular, and NodeJs. I have worked on applications of every size, from startups to international brands. I also have a lot of experience working with layouts and components since I started my professional career as a designer. 
+I've been working on the iOS platform for 6+ years now using Swift and Objective-C, but I also have 7+ years developing web applications and APIs using Ruby on Rails, Angular, and NodeJs. I have worked on applications of every size, from startups to international brands. I also have a lot of experience working with layouts and components since I started my professional career as a designer.
+
+Find more about me on my social pages below.
+[LinkedIn](https://www.linkedin.com/in/brunopereiras/) - [Github](https://github.com/duarte-bruno)
 
 ## Architecture
 
