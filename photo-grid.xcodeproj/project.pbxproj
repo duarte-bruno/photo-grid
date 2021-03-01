@@ -27,8 +27,6 @@
 		75CDB80725E5C814000C114E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CDB80625E5C814000C114E /* AppDelegate.swift */; };
 		75CDB81025E5C816000C114E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75CDB80F25E5C816000C114E /* Assets.xcassets */; };
 		75CDB81325E5C816000C114E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75CDB81125E5C816000C114E /* LaunchScreen.storyboard */; };
-		75CDB81E25E5C816000C114E /* photo_gridTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CDB81D25E5C816000C114E /* photo_gridTests.swift */; };
-		75CDB82925E5C817000C114E /* photo_gridUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CDB82825E5C817000C114E /* photo_gridUITests.swift */; };
 		75CDB84525E5CADB000C114E /* ListPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CDB84325E5CADB000C114E /* ListPhotosViewController.swift */; };
 		75CDB84625E5CADB000C114E /* ListPhotosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75CDB84425E5CADB000C114E /* ListPhotosViewController.xib */; };
 		75CDB84C25E5CB5E000C114E /* ListPhotosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CDB84B25E5CB5E000C114E /* ListPhotosViewModel.swift */; };
@@ -75,11 +73,7 @@
 		75CDB81225E5C816000C114E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		75CDB81425E5C816000C114E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		75CDB81925E5C816000C114E /* photo-gridTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "photo-gridTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		75CDB81D25E5C816000C114E /* photo_gridTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photo_gridTests.swift; sourceTree = "<group>"; };
-		75CDB81F25E5C816000C114E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		75CDB82425E5C817000C114E /* photo-gridUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "photo-gridUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		75CDB82825E5C817000C114E /* photo_gridUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photo_gridUITests.swift; sourceTree = "<group>"; };
-		75CDB82A25E5C817000C114E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		75CDB84325E5CADB000C114E /* ListPhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPhotosViewController.swift; sourceTree = "<group>"; };
 		75CDB84425E5CADB000C114E /* ListPhotosViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListPhotosViewController.xib; sourceTree = "<group>"; };
 		75CDB84B25E5CB5E000C114E /* ListPhotosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPhotosViewModel.swift; sourceTree = "<group>"; };
@@ -145,8 +139,6 @@
 			isa = PBXGroup;
 			children = (
 				75CDB80525E5C814000C114E /* photo-grid */,
-				75CDB81C25E5C816000C114E /* photo-gridTests */,
-				75CDB82725E5C817000C114E /* photo-gridUITests */,
 				75CDB80425E5C814000C114E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -166,30 +158,11 @@
 			children = (
 				75CDB83F25E5C9DC000C114E /* App */,
 				75CDB83E25E5C9C0000C114E /* Services */,
-				75CDB83D25E5C9B0000C114E /* Models */,
 				75CDB83C25E5C9A1000C114E /* Controllers */,
 				75CDB83B25E5C98D000C114E /* ViewModels */,
 				75CDB83A25E5C967000C114E /* Views */,
 			);
 			path = "photo-grid";
-			sourceTree = "<group>";
-		};
-		75CDB81C25E5C816000C114E /* photo-gridTests */ = {
-			isa = PBXGroup;
-			children = (
-				75CDB81D25E5C816000C114E /* photo_gridTests.swift */,
-				75CDB81F25E5C816000C114E /* Info.plist */,
-			);
-			path = "photo-gridTests";
-			sourceTree = "<group>";
-		};
-		75CDB82725E5C817000C114E /* photo-gridUITests */ = {
-			isa = PBXGroup;
-			children = (
-				75CDB82825E5C817000C114E /* photo_gridUITests.swift */,
-				75CDB82A25E5C817000C114E /* Info.plist */,
-			);
-			path = "photo-gridUITests";
 			sourceTree = "<group>";
 		};
 		75CDB83A25E5C967000C114E /* Views */ = {
@@ -221,13 +194,6 @@
 				75085BEB25EAE2F900EC331C /* ShowPhotoViewController.xib */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		75CDB83D25E5C9B0000C114E /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		75CDB83E25E5C9C0000C114E /* Services */ = {
@@ -408,7 +374,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75CDB81E25E5C816000C114E /* photo_gridTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,7 +381,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75CDB82925E5C817000C114E /* photo_gridUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
