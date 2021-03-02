@@ -22,6 +22,8 @@ class PhotoService: NSObject {
     private var delegate: PhotoServiceDelegate?
     private let options = PHImageRequestOptions()
 
+    internal var isLibraryAccessAllowed: Bool?
+
     // MARK: - Class lifecycle
 
     init(_ delegate: PhotoServiceDelegate? = nil) {
@@ -44,12 +46,14 @@ class PhotoService: NSObject {
     }
 
     /// Request the access to Photo Library
-    static func requestLibraryAccess(completion: @escaping (Bool) -> Void) {
-        PHPhotoLibrary.requestAuthorization { (status) in
+    func requestLibraryAccess(completion: @escaping (Bool) -> Void) {
+        PHPhotoLibrary.requestAuthorization { [weak self] (status) in
             switch status {
             case .authorized:
+                self?.isLibraryAccessAllowed = true
                 completion(true)
             default:
+                self?.isLibraryAccessAllowed = false
                 completion(false)
             }
         }

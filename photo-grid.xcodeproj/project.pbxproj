@@ -30,17 +30,12 @@
 		75CDB84525E5CADB000C114E /* ListPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CDB84325E5CADB000C114E /* ListPhotosViewController.swift */; };
 		75CDB84625E5CADB000C114E /* ListPhotosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75CDB84425E5CADB000C114E /* ListPhotosViewController.xib */; };
 		75CDB84C25E5CB5E000C114E /* ListPhotosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CDB84B25E5CB5E000C114E /* ListPhotosViewModel.swift */; };
+		75E7E2FA25ED636200D5B58A /* photo_grid_tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E7E2F925ED636200D5B58A /* photo_grid_tests.swift */; };
+		75E7E30725EDA5EE00D5B58A /* PhotoServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E7E30625EDA5EE00D5B58A /* PhotoServiceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		75CDB81A25E5C816000C114E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 75CDB7FB25E5C814000C114E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 75CDB80225E5C814000C114E;
-			remoteInfo = "photo-grid";
-		};
-		75CDB82525E5C817000C114E /* PBXContainerItemProxy */ = {
+		75E7E2FC25ED636200D5B58A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 75CDB7FB25E5C814000C114E /* Project object */;
 			proxyType = 1;
@@ -72,11 +67,13 @@
 		75CDB80F25E5C816000C114E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		75CDB81225E5C816000C114E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		75CDB81425E5C816000C114E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		75CDB81925E5C816000C114E /* photo-gridTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "photo-gridTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		75CDB82425E5C817000C114E /* photo-gridUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "photo-gridUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		75CDB84325E5CADB000C114E /* ListPhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPhotosViewController.swift; sourceTree = "<group>"; };
 		75CDB84425E5CADB000C114E /* ListPhotosViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListPhotosViewController.xib; sourceTree = "<group>"; };
 		75CDB84B25E5CB5E000C114E /* ListPhotosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPhotosViewModel.swift; sourceTree = "<group>"; };
+		75E7E2F725ED636200D5B58A /* photo-grid-tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "photo-grid-tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		75E7E2F925ED636200D5B58A /* photo_grid_tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photo_grid_tests.swift; sourceTree = "<group>"; };
+		75E7E2FB25ED636200D5B58A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		75E7E30625EDA5EE00D5B58A /* PhotoServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoServiceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,14 +84,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		75CDB81625E5C816000C114E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		75CDB82125E5C817000C114E /* Frameworks */ = {
+		75E7E2F425ED636200D5B58A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -139,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				75CDB80525E5C814000C114E /* photo-grid */,
+				75E7E2F825ED636200D5B58A /* photo-grid-tests */,
 				75CDB80425E5C814000C114E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -147,8 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				75CDB80325E5C814000C114E /* photo-grid.app */,
-				75CDB81925E5C816000C114E /* photo-gridTests.xctest */,
-				75CDB82425E5C817000C114E /* photo-gridUITests.xctest */,
+				75E7E2F725ED636200D5B58A /* photo-grid-tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -217,6 +207,24 @@
 			path = App;
 			sourceTree = "<group>";
 		};
+		75E7E2F825ED636200D5B58A /* photo-grid-tests */ = {
+			isa = PBXGroup;
+			children = (
+				75E7E30525EDA51B00D5B58A /* Services */,
+				75E7E2F925ED636200D5B58A /* photo_grid_tests.swift */,
+				75E7E2FB25ED636200D5B58A /* Info.plist */,
+			);
+			path = "photo-grid-tests";
+			sourceTree = "<group>";
+		};
+		75E7E30525EDA51B00D5B58A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				75E7E30625EDA5EE00D5B58A /* PhotoServiceTests.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -237,41 +245,23 @@
 			productReference = 75CDB80325E5C814000C114E /* photo-grid.app */;
 			productType = "com.apple.product-type.application";
 		};
-		75CDB81825E5C816000C114E /* photo-gridTests */ = {
+		75E7E2F625ED636200D5B58A /* photo-grid-tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 75CDB83025E5C817000C114E /* Build configuration list for PBXNativeTarget "photo-gridTests" */;
+			buildConfigurationList = 75E7E2FE25ED636200D5B58A /* Build configuration list for PBXNativeTarget "photo-grid-tests" */;
 			buildPhases = (
-				75CDB81525E5C816000C114E /* Sources */,
-				75CDB81625E5C816000C114E /* Frameworks */,
-				75CDB81725E5C816000C114E /* Resources */,
+				75E7E2F325ED636200D5B58A /* Sources */,
+				75E7E2F425ED636200D5B58A /* Frameworks */,
+				75E7E2F525ED636200D5B58A /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				75CDB81B25E5C816000C114E /* PBXTargetDependency */,
+				75E7E2FD25ED636200D5B58A /* PBXTargetDependency */,
 			);
-			name = "photo-gridTests";
-			productName = "photo-gridTests";
-			productReference = 75CDB81925E5C816000C114E /* photo-gridTests.xctest */;
+			name = "photo-grid-tests";
+			productName = "photo-grid-tests";
+			productReference = 75E7E2F725ED636200D5B58A /* photo-grid-tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		75CDB82325E5C817000C114E /* photo-gridUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 75CDB83325E5C817000C114E /* Build configuration list for PBXNativeTarget "photo-gridUITests" */;
-			buildPhases = (
-				75CDB82025E5C817000C114E /* Sources */,
-				75CDB82125E5C817000C114E /* Frameworks */,
-				75CDB82225E5C817000C114E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				75CDB82625E5C817000C114E /* PBXTargetDependency */,
-			);
-			name = "photo-gridUITests";
-			productName = "photo-gridUITests";
-			productReference = 75CDB82425E5C817000C114E /* photo-gridUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -285,11 +275,7 @@
 					75CDB80225E5C814000C114E = {
 						CreatedOnToolsVersion = 12.4;
 					};
-					75CDB81825E5C816000C114E = {
-						CreatedOnToolsVersion = 12.4;
-						TestTargetID = 75CDB80225E5C814000C114E;
-					};
-					75CDB82325E5C817000C114E = {
+					75E7E2F625ED636200D5B58A = {
 						CreatedOnToolsVersion = 12.4;
 						TestTargetID = 75CDB80225E5C814000C114E;
 					};
@@ -309,8 +295,7 @@
 			projectRoot = "";
 			targets = (
 				75CDB80225E5C814000C114E /* photo-grid */,
-				75CDB81825E5C816000C114E /* photo-gridTests */,
-				75CDB82325E5C817000C114E /* photo-gridUITests */,
+				75E7E2F625ED636200D5B58A /* photo-grid-tests */,
 			);
 		};
 /* End PBXProject section */
@@ -332,14 +317,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		75CDB81725E5C816000C114E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		75CDB82225E5C817000C114E /* Resources */ = {
+		75E7E2F525ED636200D5B58A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -370,32 +348,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		75CDB81525E5C816000C114E /* Sources */ = {
+		75E7E2F325ED636200D5B58A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		75CDB82025E5C817000C114E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				75E7E30725EDA5EE00D5B58A /* PhotoServiceTests.swift in Sources */,
+				75E7E2FA25ED636200D5B58A /* photo_grid_tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		75CDB81B25E5C816000C114E /* PBXTargetDependency */ = {
+		75E7E2FD25ED636200D5B58A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 75CDB80225E5C814000C114E /* photo-grid */;
-			targetProxy = 75CDB81A25E5C816000C114E /* PBXContainerItemProxy */;
-		};
-		75CDB82625E5C817000C114E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 75CDB80225E5C814000C114E /* photo-grid */;
-			targetProxy = 75CDB82525E5C817000C114E /* PBXContainerItemProxy */;
+			targetProxy = 75E7E2FC25ED636200D5B58A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -569,21 +537,20 @@
 			};
 			name = Release;
 		};
-		75CDB83125E5C817000C114E /* Debug */ = {
+		75E7E2FF25ED636200D5B58A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8KR33X63ZD;
-				INFOPLIST_FILE = "photo-gridTests/Info.plist";
+				INFOPLIST_FILE = "photo-grid-tests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.bruno-duarte.photo-gridTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bruno.photo-grid-tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -591,65 +558,24 @@
 			};
 			name = Debug;
 		};
-		75CDB83225E5C817000C114E /* Release */ = {
+		75E7E30025ED636200D5B58A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8KR33X63ZD;
-				INFOPLIST_FILE = "photo-gridTests/Info.plist";
+				INFOPLIST_FILE = "photo-grid-tests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.bruno-duarte.photo-gridTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bruno.photo-grid-tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/photo-grid.app/photo-grid";
-			};
-			name = Release;
-		};
-		75CDB83425E5C817000C114E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8KR33X63ZD;
-				INFOPLIST_FILE = "photo-gridUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.bruno-duarte.photo-gridUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "photo-grid";
-			};
-			name = Debug;
-		};
-		75CDB83525E5C817000C114E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8KR33X63ZD;
-				INFOPLIST_FILE = "photo-gridUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.bruno-duarte.photo-gridUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "photo-grid";
 			};
 			name = Release;
 		};
@@ -674,20 +600,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		75CDB83025E5C817000C114E /* Build configuration list for PBXNativeTarget "photo-gridTests" */ = {
+		75E7E2FE25ED636200D5B58A /* Build configuration list for PBXNativeTarget "photo-grid-tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				75CDB83125E5C817000C114E /* Debug */,
-				75CDB83225E5C817000C114E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		75CDB83325E5C817000C114E /* Build configuration list for PBXNativeTarget "photo-gridUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				75CDB83425E5C817000C114E /* Debug */,
-				75CDB83525E5C817000C114E /* Release */,
+				75E7E2FF25ED636200D5B58A /* Debug */,
+				75E7E30025ED636200D5B58A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

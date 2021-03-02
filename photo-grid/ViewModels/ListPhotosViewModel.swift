@@ -17,12 +17,18 @@ class ListPhotosViewModel {
     // MARK: - Attributes
     
     var delegate: ListPhotosViewModelDelegate? = nil
-    var photoService: PhotoService?
-    
+    var photoService: PhotoService
+
+    // MARK: - Class lifecycle
+
+    init() {
+        photoService = PhotoService()
+    }
+
     // MARK: - Logic
     
     func requestLibraryAccess() {
-        PhotoService.requestLibraryAccess { (authorized) in
+        photoService.requestLibraryAccess { (authorized) in
             DispatchQueue.main.async { [weak self] in
                 if authorized {
                     self?.delegate?.libraryAccessGranted()
